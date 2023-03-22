@@ -9,7 +9,7 @@
 		<!-- row -->
 		<div class="row">
 			<!-- shop -->
-			<c:forEach var="item" items="${ slides }" varStatus="index">
+			<c:forEach var="item" items="${ slides }">
 
 				<div class="col-md-4 col-xs-6">
 					<div class="shop">
@@ -83,10 +83,20 @@
 					<h3 class="title">New Products</h3>
 					<div class="section-nav">
 						<ul class="section-tab-nav tab-nav">
-							<li class="active"><a data-toggle="tab" href="#tab1">Laptops</a></li>
+						<c:forEach var="item" items="${ categories }" varStatus="index">
+							<c:if test="${index.first}">
+								<li class="active">
+							</c:if>
+							<c:if test="${ not index.first}">
+								<li>
+							</c:if>
+							<a data-toggle="tab" href="/sanpham/${ item.id }">${ item.name }</a></li>
+						
+						</c:forEach>
+							<!-- <li class="active"><a data-toggle="tab" href="#tab1">Laptops</a></li>
 							<li><a data-toggle="tab" href="#tab1">Smartphones</a></li>
 							<li><a data-toggle="tab" href="#tab1">Cameras</a></li>
-							<li><a data-toggle="tab" href="#tab1">Accessories</a></li>
+							<li><a data-toggle="tab" href="#tab1">Accessories</a></li> -->
 						</ul>
 					</div>
 				</div>

@@ -8,9 +8,7 @@ import ElectronicShop.Service.User.HomeServiceImpl;
 
 @Controller
 public class HomeController {
-	/*
-	 * @Autowired HomeServiceImpl homeService;
-	 */
+
 	@Autowired
 	HomeServiceImpl homeService;
 
@@ -18,6 +16,7 @@ public class HomeController {
 	public ModelAndView Index() {
 		ModelAndView mv = new ModelAndView("user/index");
 		mv.addObject("slides", homeService.getDataSlides());
+		mv.addObject("categories", homeService.getDataCategories());
 		return mv;
 	}
 
