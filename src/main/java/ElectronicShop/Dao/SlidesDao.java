@@ -3,18 +3,14 @@ package ElectronicShop.Dao;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import ElectronicShop.Entity.MapperSlides;
 import ElectronicShop.Entity.Slides;
 
 @Repository
-public class SlidesDao {
+public class SlidesDao extends BaseDao{
 	
-	@Autowired
-	public JdbcTemplate _jdbcTemplate;
 	
 	public List<Slides> getDataSlides(){
 		List<Slides> list = new ArrayList<Slides>();

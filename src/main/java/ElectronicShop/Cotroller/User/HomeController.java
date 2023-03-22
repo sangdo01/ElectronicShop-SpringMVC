@@ -1,23 +1,19 @@
 package ElectronicShop.Cotroller.User;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import ElectronicShop.Service.User.HomeServiceImpl;
 
 @Controller
-public class HomeController {
+public class HomeController extends BaseController{
 
-	@Autowired
-	HomeServiceImpl homeService;
 
 	@RequestMapping(value = { "/", "/trang-chu" })
 	public ModelAndView Index() {
-		ModelAndView mv = new ModelAndView("user/index");
-		mv.addObject("slides", homeService.getDataSlides());
-		mv.addObject("categories", homeService.getDataCategories());
-		return mv;
+		_mvShare.addObject("slides", _homeService.getDataSlides());
+		_mvShare.addObject("categories", _homeService.getDataCategories());
+		_mvShare.setViewName("user/index");
+		return _mvShare;
 	}
 
 	@RequestMapping(value = "/product")

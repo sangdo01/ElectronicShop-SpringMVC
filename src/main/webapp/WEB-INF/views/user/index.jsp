@@ -76,6 +76,7 @@
 	<div class="container">
 		<!-- row -->
 		<div class="row">
+		<h1>${ menu.size() }</h1>
 
 			<!-- section title -->
 			<div class="col-md-12">
