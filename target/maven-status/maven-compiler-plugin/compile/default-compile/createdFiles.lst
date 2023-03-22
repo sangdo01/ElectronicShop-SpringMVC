@@ -1,0 +1,6 @@
+ElectronicShop\Entity\Slides.class
+ElectronicShop\Service\User\HomeServiceImpl.class
+ElectronicShop\Service\User\IHomeService.class
+ElectronicShop\Dao\SlidesDao.class
+ElectronicShop\Cotroller\User\HomeController.class
+ElectronicShop\Entity\MapperSlides.class
