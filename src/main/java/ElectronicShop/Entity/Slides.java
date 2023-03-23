@@ -2,7 +2,7 @@ package ElectronicShop.Entity;
 
 public class Slides {
 
-	private int idslides;
+	private int id;
 	private String img;
 	private String caption;
 	private String content;
@@ -11,12 +11,12 @@ public class Slides {
 		super();
 	}
 
-	public int getIdslides() {
-		return idslides;
+	public int getId() {
+		return id;
 	}
 
-	public void setIdslides(int idslides) {
-		this.idslides = idslides;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getImg() {
