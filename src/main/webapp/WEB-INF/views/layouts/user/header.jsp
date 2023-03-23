@@ -42,15 +42,15 @@
 					<div class="header-search">
 						<form>
 							<select class="input-select">
-								<option value="0">All Categories</option>
-								<c:forEach var="item" items="${ categories }">
+								<option value="0">Tất cả thể loại</option>
+								<c:forEach var="item" items="${ cateShare }">
 									<option value="1">${ item.name }</option>
 								</c:forEach>
 								<!-- <option value="0">All Categories</option>
 
 								<option value="1">Category 02</option> -->
-							</select> <input class="input" placeholder="Search here">
-							<button class="search-btn">Search</button>
+							</select> <input class="input" placeholder="Tìm kiếm tại đây">
+							<button class="search-btn">Tìm kiếm</button>
 						</form>
 					</div>
 				</div>
@@ -61,8 +61,7 @@
 					<div class="header-ctn">
 						<!-- Wishlist -->
 						<div>
-							<a href="#"> <i class="fa fa-heart-o"></i> <span>Your
-									Wishlist</span>
+							<a href="#"> <i class="fa fa-heart-o"></i> <span> Danh sách yêu thích</span>
 								<div class="qty">2</div>
 							</a>
 						</div>
@@ -71,8 +70,7 @@
 						<!-- Cart -->
 						<div class="dropdown">
 							<a class="dropdown-toggle" data-toggle="dropdown"
-								aria-expanded="true"> <i class="fa fa-shopping-cart"></i> <span>Your
-									Cart</span>
+								aria-expanded="true"> <i class="fa fa-shopping-cart"></i> <span>Giỏ hàng</span>
 								<div class="qty">3</div>
 							</a>
 							<div class="cart-dropdown">

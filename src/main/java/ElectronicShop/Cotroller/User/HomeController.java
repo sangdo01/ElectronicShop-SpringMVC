@@ -12,6 +12,7 @@ public class HomeController extends BaseController{
 	public ModelAndView Index() {
 		_mvShare.addObject("slides", _homeService.getDataSlides());
 		_mvShare.addObject("categories", _homeService.getDataCategories());
+		_mvShare.addObject("products", _homeService.getDataProducts());
 		_mvShare.setViewName("user/index");
 		return _mvShare;
 	}
