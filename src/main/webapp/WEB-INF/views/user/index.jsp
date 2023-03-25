@@ -90,7 +90,8 @@
 								<c:if test="${ not index.first}">
 									<li>
 								</c:if>
-								<a data-toggle="tab" href="/sanpham/${ item.id }">${ item.name }</a>
+								<%-- <a data-toggle="tab" href="<c:url value="/san-pham" />">${ item.name }</a> --%>
+								<a href="<c:url value="/san-pham" />">${ item.name }</a>
 								</li>
 
 							</c:forEach>
@@ -103,7 +104,6 @@
 				</div>
 			</div>
 			<!-- /section title -->
-<h1>${products.size()}</h1>
 			<!-- Products tab & slick -->
 			<div class="col-md-12">
 				<div class="row">
@@ -111,7 +111,7 @@
 						<!-- tab -->
 						<div id="tab1" class="tab-pane active">
 							<div class="products-slick" data-nav="#slick-nav-1">
-							
+
 								<c:if test="${products.size() > 0 }">
 									<c:forEach var="item" items="${ products }">
 										<!-- product -->
