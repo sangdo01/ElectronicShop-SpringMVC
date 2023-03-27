@@ -47,12 +47,13 @@
 		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 		<![endif]-->
+<decorator:head />
 
 </head>
 <body>
-	
+
 	<!-- Start Header -->
-	<%@include file="/WEB-INF/views/layouts/user/header.jsp" %>
+	<%@include file="/WEB-INF/views/layouts/user/header.jsp"%>
 	<!-- End Header -->
 
 	<!-- Start Body -->
@@ -60,7 +61,7 @@
 	<!-- End Body -->
 
 	<!-- Start Footer -->
-	<%@include file="/WEB-INF/views/layouts/user/footer.jsp" %>
+	<%@include file="/WEB-INF/views/layouts/user/footer.jsp"%>
 	<!-- End Footer -->
 
 	<!-- jQuery Plugins -->

@@ -6,10 +6,14 @@ import org.springframework.stereotype.Repository;
 
 import ElectronicShop.Dto.ProductsDto;
 import ElectronicShop.Dto.ProductsDtoMapper;
+
 @Repository
 public class ProductsDao extends BaseDao {
 
-	private String sqlString() {
+	private final boolean YES = true;
+	private final boolean NO = false;
+
+	private StringBuffer sqlString() {
 		StringBuffer sql = new StringBuffer();
 		sql.append("select ");
 		sql.append("p.id as id_product ");
@@ -32,14 +36,61 @@ public class ProductsDao extends BaseDao {
 		sql.append("products as p ");
 		sql.append("INNER JOIN colors as c ");
 		sql.append("on p.id = c.id_product ");
+
+		return sql;
+	}
+
+	private String sqlProducts(boolean newProduct, boolean highLight) {
+		StringBuffer sql = sqlString();
+		sql.append("where 1 = 1 ");
+		if (highLight) {
+			sql.append("and p.highlight = true ");
+		}
+		if (newProduct) {
+			sql.append("and p.new_product = true ");
+		}
 		sql.append("group by p.id, c.id_product ");
 		sql.append("order by rand() ");
-		sql.append("limit 9 ");
+		if (highLight) {
+			sql.append("limit 9 ");
+		}
+		if (newProduct) {
+			sql.append("limit 12 ");
+		}
+
+		/* sql = sqlString(); */
+		return sql.toString();
+	}
+
+	private StringBuffer sqlProductsByID(int id) {
+		StringBuffer sql = sqlString();
+		sql.append("where 1 = 1 ");
+		sql.append("and id_category = " + id + " ");
+		return sql;
+	}
+
+	private String sqlProductsPaginate(int id, int start, int totalPage) {
+		StringBuffer sql = sqlProductsByID(id);
+		sql.append("limit " + start + ", " + totalPage);
 		return sql.toString();
 	}
 
 	public List<ProductsDto> getDataProducts() {
-		String sql = sqlString();
+		String sql = sqlProducts(YES, NO);
+		List<ProductsDto> listProducts = _jdbcTemplate.query(sql, new ProductsDtoMapper());
+		return listProducts;
+
+	}
+
+	public List<ProductsDto> getAllProductsByID(int id) {
+		String sql = sqlProductsByID(id).toString();
+		List<ProductsDto> listProducts = _jdbcTemplate.query(sql, new ProductsDtoMapper());
+		return listProducts;
+
+	}
+
+	public List<ProductsDto> getDataProductsPaginate(int id, int start, int totalPage) {
+		String sql = sqlProductsPaginate(id, start, totalPage);
 		List<ProductsDto> listProducts = _jdbcTemplate.query(sql, new ProductsDtoMapper());
 		return listProducts;
 

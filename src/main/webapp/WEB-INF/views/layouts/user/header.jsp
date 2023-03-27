@@ -7,14 +7,15 @@
 	<div id="top-header">
 		<div class="container">
 			<ul class="header-links pull-left">
-				<li><a href="#"><i class="fa fa-phone"></i> +021-95-51-84</a></li>
+				<li><a href="#"><i class="fa fa-phone"></i> +0333-???-???</a></li>
 				<li><a href="#"><i class="fa fa-envelope-o"></i>
 						email@email.com</a></li>
-				<li><a href="#"><i class="fa fa-map-marker"></i> 1734
-						Stonecoal Road</a></li>
+				<li><a href="#"><i class="fa fa-map-marker"></i> TP. Ho Chi
+						Minh</a></li>
 			</ul>
 			<ul class="header-links pull-right">
-				<li><a href="#"><i class="fa fa-dollar"></i> USD</a></li>
+				<li><a href="#"> <!-- <i class="fa fa-dollar"></i> -->₫ VNĐ
+				</a></li>
 				<li><a href="#"><i class="fa fa-user-o"></i> Đăng Nhập</a></li>
 			</ul>
 		</div>
@@ -41,6 +42,7 @@
 				<div class="col-md-6">
 					<div class="header-search">
 						<form>
+
 							<select class="input-select">
 								<option value="0">Tất cả thể loại</option>
 								<c:forEach var="item" items="${ cateShare }">
@@ -61,7 +63,8 @@
 					<div class="header-ctn">
 						<!-- Wishlist -->
 						<div>
-							<a href="#"> <i class="fa fa-heart-o"></i> <span> Danh sách yêu thích</span>
+							<a href="#"> <i class="fa fa-heart-o"></i> <span> Danh
+									sách yêu thích</span>
 								<div class="qty">2</div>
 							</a>
 						</div>
@@ -70,7 +73,8 @@
 						<!-- Cart -->
 						<div class="dropdown">
 							<a class="dropdown-toggle" data-toggle="dropdown"
-								aria-expanded="true"> <i class="fa fa-shopping-cart"></i> <span>Giỏ hàng</span>
+								aria-expanded="true"> <i class="fa fa-shopping-cart"></i> <span>Giỏ
+									hàng</span>
 								<div class="qty">3</div>
 							</a>
 							<div class="cart-dropdown">
