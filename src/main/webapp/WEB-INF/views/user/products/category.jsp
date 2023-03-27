@@ -217,10 +217,9 @@
 												<i class="fa fa-exchange"></i><span class="tooltipp">add
 													to compare</span>
 											</button>
-											<button class="quick-view">
-												<i class="fa fa-eye"></i><span class="tooltipp">quick
-													view</span>
-											</button>
+											<a href="<c:url value="/chi-tiet-san-pham/${item.id_product }" />" class="quick-view">
+												<i class="fa fa-eye"></i><span class="tooltipp">Xem sản phẩm</span>
+											</a>
 										</div>
 									</div>
 									<div class="add-to-cart">
