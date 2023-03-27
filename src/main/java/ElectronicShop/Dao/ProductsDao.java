@@ -58,12 +58,39 @@ public class ProductsDao extends BaseDao {
 			sql.append("limit 12 ");
 		}
 		
-		sql = sqlString();
+		/* sql = sqlString(); */
+		return sql.toString();
+	}
+	
+	private String sqlProductsByID(int id) {
+		StringBuffer sql = sqlString();
+		sql.append("where 1 = 1 ");
+		sql.append("and id_category = " + id + " ");
 		return sql.toString();
 	}
 
+	private String sqlProductsPaginate(int start, int end) {
+		StringBuffer sql = sqlString();
+		sql.append("limit " + start + ", " + end);
+		return sql.toString();
+	}
+	
 	public List<ProductsDto> getDataProducts() {
 		String sql = sqlProducts(YES, NO);
+		List<ProductsDto> listProducts = _jdbcTemplate.query(sql, new ProductsDtoMapper());
+		return listProducts;
+
+	}
+	
+	public List<ProductsDto> getAllProductsByID(int id) {
+		String sql = sqlProductsByID(id);
+		List<ProductsDto> listProducts = _jdbcTemplate.query(sql, new ProductsDtoMapper());
+		return listProducts;
+
+	}
+	
+	public List<ProductsDto> getDataProductsPaginate(int start, int end) {
+		String sql = sqlProductsPaginate(start, end);
 		List<ProductsDto> listProducts = _jdbcTemplate.query(sql, new ProductsDtoMapper());
 		return listProducts;
 

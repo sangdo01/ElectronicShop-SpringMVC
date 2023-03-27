@@ -16,7 +16,7 @@ public class PaginateServiceImpl {
 		int start = findStart(paginate.getCurrentPage(), limit);
 		paginate.setStart(start);
 		int end = findEnd(paginate.getStart(), limit, totalData);
-		paginate.setCurrentPage(end);
+		paginate.setEnd(end);
 		return paginate;
 
 	}
