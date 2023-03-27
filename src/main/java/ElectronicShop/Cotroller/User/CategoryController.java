@@ -32,6 +32,8 @@ public class CategoryController extends BaseController {
 	@Autowired
 	private PaginateServiceImpl paginateService;
 
+	private int totalProductsPage = 9;
+
 	@RequestMapping(value = "/san-pham")
 	public ModelAndView Product() {
 		_mvShare.setViewName("user/products/category");
@@ -42,13 +44,25 @@ public class CategoryController extends BaseController {
 	@RequestMapping(value = "/san-pham/{id}")
 	public ModelAndView ProductByIdCategory(@PathVariable String id) {
 		_mvShare.setViewName("user/products/category");
-		int totalProductsPage = 9;
-
 		int totalData = categoryService.getAllProductsByID(Integer.parseInt(id)).size();
 		PaginateDto paginateInfo = paginateService.getInfoPaginate(totalData, totalProductsPage, 1);
+		_mvShare.addObject("idCategory", id);
 		_mvShare.addObject("paginateInfo", paginateInfo);
-		_mvShare.addObject("productsPaginate",
-				categoryService.getDataProductsPaginate(paginateInfo.getStart(), paginateInfo.getEnd()));
+		_mvShare.addObject("productsPaginate", categoryService.getDataProductsPaginate(Integer.parseInt(id),
+				paginateInfo.getStart(),totalProductsPage));
+		return _mvShare;
+	}
+
+	@RequestMapping(value = "/san-pham/{id}/{currentPage}")
+	public ModelAndView ProductByIdCategory(@PathVariable String id, @PathVariable String currentPage) {
+		_mvShare.setViewName("user/products/category");
+		int totalData = categoryService.getAllProductsByID(Integer.parseInt(id)).size();
+		PaginateDto paginateInfo = paginateService.getInfoPaginate(totalData, totalProductsPage,
+				Integer.parseInt(currentPage));
+		_mvShare.addObject("idCategory", id);
+		_mvShare.addObject("paginateInfo", paginateInfo);
+		_mvShare.addObject("productsPaginate", categoryService.getDataProductsPaginate(Integer.parseInt(id),
+				paginateInfo.getStart(), totalProductsPage));
 		return _mvShare;
 
 	}

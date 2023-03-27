@@ -16,8 +16,8 @@ public class CategoryServiceImpl implements ICategoryService {
 	private ProductsDao productsDao;
 
 	@Override
-	public List<ProductsDto> getDataProductsPaginate(int start, int end) {
-		return productsDao.getDataProductsPaginate(start, end);
+	public List<ProductsDto> getDataProductsPaginate(int id, int start, int totalPage) {
+		return productsDao.getDataProductsPaginate(id, start, totalPage);
 	}
 
 	@Override

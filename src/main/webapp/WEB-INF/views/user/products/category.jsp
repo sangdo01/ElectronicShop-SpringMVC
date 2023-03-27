@@ -179,15 +179,15 @@
 
 				<!-- store products -->
 				<div class="row">
-					<h1>${ productsPaginate.size() }</h1>
-					
 					<!-- product -->
 					<c:if test="${ productsPaginate.size() > 0 }">
 						<c:forEach var="item" items="${ productsPaginate }">
 							<div class="col-md-4 col-xs-6">
 								<div class="product">
 									<div class="product-img">
-										<img src="./img/product01.png" alt="">
+										<img
+											src="<c:url value="/assets/user/img/product/${ item.img }" />"
+											alt="">
 										<div class="product-label">
 											<span class="sale">-30%</span> <span class="new">NEW</span>
 										</div>
@@ -195,10 +195,12 @@
 									<div class="product-body">
 										<p class="product-category">Category</p>
 										<h3 class="product-name">
-											<a href="#">{ item.name }</a>
+											<a href="#">${ item.name }</a>
 										</h3>
 										<h4 class="product-price">
-											$980.00
+											<fmt:formatNumber type="number" groupingUsed="true"
+												value="${ item.price }" />
+											₫
 											<del class="product-old-price">$990.00</del>
 										</h4>
 										<div class="product-rating">
@@ -228,6 +230,8 @@
 									</div>
 								</div>
 							</div>
+							<!-- <div class="clearfix visible-sm visible-xs"></div> -->
+
 						</c:forEach>
 
 					</c:if>
@@ -241,11 +245,24 @@
 				<div class="store-filter clearfix" style="margin-top: 60px">
 					<span class="store-qty">Showing 20-100 products</span>
 					<ul class="store-pagination">
+						<c:forEach var="item" begin="1"
+							end="${ paginateInfo.totalPage }" varStatus="loop">
+							<c:if test="${ (loop.index) ==  paginateInfo.currentPage }">
+
+								<li class="active"><a
+									href="<c:url value="/san-pham/${ idCategory }/${ loop.index }" />">${ loop.index }</a></li>
+							</c:if>
+							<c:if test="${ (loop.index) !=  paginateInfo.currentPage }">
+								<li><a href="<c:url value="/san-pham/${ idCategory }/${ loop.index }" />">${ loop.index }</a></li>
+							</c:if>
+
+						</c:forEach>
+						<!-- <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
 						<li class="active">1</li>
 						<li><a href="#">2</a></li>
 						<li><a href="#">3</a></li>
 						<li><a href="#">4</a></li>
-						<li><a href="#"><i class="fa fa-angle-right"></i></a></li>
+						<li><a href="#"><i class="fa fa-angle-right"></i></a></li> -->
 					</ul>
 				</div>
 				<!-- /store bottom filter -->

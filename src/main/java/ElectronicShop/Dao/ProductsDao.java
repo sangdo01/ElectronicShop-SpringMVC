@@ -12,7 +12,7 @@ public class ProductsDao extends BaseDao {
 
 	private final boolean YES = true;
 	private final boolean NO = false;
-	
+
 	private StringBuffer sqlString() {
 		StringBuffer sql = new StringBuffer();
 		sql.append("select ");
@@ -57,40 +57,40 @@ public class ProductsDao extends BaseDao {
 		if (newProduct) {
 			sql.append("limit 12 ");
 		}
-		
+
 		/* sql = sqlString(); */
 		return sql.toString();
 	}
-	
-	private String sqlProductsByID(int id) {
+
+	private StringBuffer sqlProductsByID(int id) {
 		StringBuffer sql = sqlString();
 		sql.append("where 1 = 1 ");
 		sql.append("and id_category = " + id + " ");
+		return sql;
+	}
+
+	private String sqlProductsPaginate(int id, int start, int totalPage) {
+		StringBuffer sql = sqlProductsByID(id);
+		sql.append("limit " + start + ", " + totalPage);
 		return sql.toString();
 	}
 
-	private String sqlProductsPaginate(int start, int end) {
-		StringBuffer sql = sqlString();
-		sql.append("limit " + start + ", " + end);
-		return sql.toString();
-	}
-	
 	public List<ProductsDto> getDataProducts() {
 		String sql = sqlProducts(YES, NO);
 		List<ProductsDto> listProducts = _jdbcTemplate.query(sql, new ProductsDtoMapper());
 		return listProducts;
 
 	}
-	
+
 	public List<ProductsDto> getAllProductsByID(int id) {
-		String sql = sqlProductsByID(id);
+		String sql = sqlProductsByID(id).toString();
 		List<ProductsDto> listProducts = _jdbcTemplate.query(sql, new ProductsDtoMapper());
 		return listProducts;
 
 	}
-	
-	public List<ProductsDto> getDataProductsPaginate(int start, int end) {
-		String sql = sqlProductsPaginate(start, end);
+
+	public List<ProductsDto> getDataProductsPaginate(int id, int start, int totalPage) {
+		String sql = sqlProductsPaginate(id, start, totalPage);
 		List<ProductsDto> listProducts = _jdbcTemplate.query(sql, new ProductsDtoMapper());
 		return listProducts;
 

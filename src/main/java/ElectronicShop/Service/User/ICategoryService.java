@@ -10,5 +10,7 @@ import ElectronicShop.Dto.ProductsDto;
 public interface ICategoryService {
 
 	public List<ProductsDto> getAllProductsByID(int id);
-	public List<ProductsDto> getDataProductsPaginate(int start, int end);
+	
+	//not sure
+	public List<ProductsDto> getDataProductsPaginate(int id, int start, int totalPage);
 }
