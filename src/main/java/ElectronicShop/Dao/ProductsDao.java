@@ -58,7 +58,6 @@ public class ProductsDao extends BaseDao {
 		if (newProduct) {
 			sql.append("limit 12 ");
 		}
-
 		/* sql = sqlString(); */
 		return sql.toString();
 	}
@@ -113,5 +112,11 @@ public class ProductsDao extends BaseDao {
 		String sql = sqlProductByID(id);
 		List<ProductsDto> listProduct = _jdbcTemplate.query(sql, new ProductsDtoMapper());
 		return listProduct;
+	}
+	
+	public ProductsDto findProductByID(int id) {
+		String sql = sqlProductByID(id);
+		ProductsDto product = _jdbcTemplate.queryForObject(sql, new ProductsDtoMapper());
+		return product;
 	}
 }
