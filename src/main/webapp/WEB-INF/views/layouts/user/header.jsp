@@ -124,8 +124,8 @@
 									</h5>
 								</div>
 								<div class="cart-btns">
-									<a href="#">View Cart</a> <a href="#">Checkout <i
-										class="fa fa-arrow-circle-right"></i></a>
+									<a href="<c:url value="/gio-hang" />">Xem giỏ hàng</a> <a
+										href="#">Checkout <i class="fa fa-arrow-circle-right"></i></a>
 								</div>
 							</div>
 						</div>
