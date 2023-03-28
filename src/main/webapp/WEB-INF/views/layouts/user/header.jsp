@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@include file="/WEB-INF/views/layouts/user/taglib.jsp"%>
 <!-- HEADER -->
 <header>
 	<!-- TOP HEADER -->
@@ -75,7 +75,7 @@
 							<a class="dropdown-toggle" data-toggle="dropdown"
 								aria-expanded="true"> <i class="fa fa-shopping-cart"></i> <span>Giỏ
 									hàng</span>
-								<div class="qty">3</div>
+								<div class="qty">${ TotalQuantyCart }</div>
 							</a>
 							<div class="cart-dropdown">
 								<div class="cart-list">
@@ -115,8 +115,13 @@
 									</div>
 								</div>
 								<div class="cart-summary">
-									<small>3 Item(s) selected</small>
-									<h5>SUBTOTAL: $2940.00</h5>
+									<small>${ TotalQuantyCart } - Sản phẩm đã chọn</small>
+									<h5>
+										Tổng tiền:
+										<fmt:formatNumber type="number" groupingUsed="true"
+											value="${ TotalPriceCart }" />
+										₫
+									</h5>
 								</div>
 								<div class="cart-btns">
 									<a href="#">View Cart</a> <a href="#">Checkout <i
