@@ -1,14 +1,18 @@
 package ElectronicShop.Dao;
 
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import ElectronicShop.Dto.CartDto;
 import ElectronicShop.Dto.ProductsDto;
 
+@Repository
 public class CartDao extends BaseDao {
 
+	@Autowired
 	ProductsDao productsDao = new ProductsDao();
 
 	public HashMap<Integer, CartDto> addCart(int id, HashMap<Integer, CartDto> cart) {

@@ -11,6 +11,7 @@
 	<div class="container">
 		<!-- row -->
 		<div class="row">
+		<h1>${ Cart.size() }</h1>
 			<div class="col-md-12">
 				<ul class="breadcrumb-tree">
 					<li><a href="#">Trang chủ</a></li>
