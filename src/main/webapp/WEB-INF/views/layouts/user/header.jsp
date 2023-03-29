@@ -2,6 +2,53 @@
 	pageEncoding="UTF-8"%>
 <%@include file="/WEB-INF/views/layouts/user/taglib.jsp"%>
 <!-- HEADER -->
+<style>
+.dropdown-login {
+	float: left;
+	overflow: hidden;
+}
+
+.dropdown-login .dropbtn-login {
+	font-size: 16px;
+	border: none;
+	outline: none;
+	color: white;
+	padding: 14px 16px;
+	background-color: inherit;
+	font-family: inherit;
+	margin: 0;
+}
+
+.dropdown-login:hover .dropbtn-login {
+	background-color: red;
+}
+
+.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #1e1f29;
+	min-width: 160px;
+	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+	z-index: 1;
+}
+
+.dropdown-content a {
+	float: none;
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	text-align: left;
+}
+
+.dropdown-content a:hover {
+	background-color: #ddd;
+}
+
+.dropdown-login:hover .dropdown-content {
+	display: block;
+}
+</style>
 <header>
 	<!-- TOP HEADER -->
 	<div id="top-header">
@@ -14,10 +61,41 @@
 						Minh</a></li>
 			</ul>
 			<ul class="header-links pull-right">
-				<li><a href="#"> <!-- <i class="fa fa-dollar"></i> -->₫ VNĐ
-				</a></li>
-				<li><a href="<c:url value="/dang-nhap" />"><i class="fa fa-user-o"></i> Đăng Nhập</a></li>
+				<%-- <li><a href="#"> ₫ VNĐ </a></li>
+				<li><a href="<c:url value="/dang-ky" />"><i
+						class="fa fa-user-o"></i> Đăng Ký</a></li> --%>
+				<!-- Dropdown List Login -->
+				<li>
+					<div>
+						<div class="dropdown-login">
+							<c:if test="${ not empty LoginInfo }">
+								<button class="dropbtn-login">
+									${ LoginInfo.display_name } <i class="fa fa-caret-down"></i>
+								</button>
+								<div class="dropdown-content">
+									<a href="<c:url value="/dang-xuat" />">Đăng xuất</a>
+								</div>
+
+							</c:if>
+							<c:if test="${ empty LoginInfo }">
+								<button class="dropbtn-login">
+									Tài khoản <i class="fa fa-caret-down"></i>
+								</button>
+								<div class="dropdown-content">
+									<a href="<c:url value="/dang-nhap" />">Đăng nhập</a> <a
+										href="<c:url value="/dang-ky" />">Đăng ký</a>
+								</div>
+
+							</c:if>
+
+						</div>
+					</div>
+				</li>
+
+
 			</ul>
+
+
 		</div>
 	</div>
 	<!-- /TOP HEADER -->
@@ -62,17 +140,19 @@
 				<div class="col-md-3 clearfix">
 					<div class="header-ctn">
 						<!-- Wishlist -->
-						<div>
+						<!-- <div>
 							<a href="#"> <i class="fa fa-heart-o"></i> <span> Danh
 									sách yêu thích</span>
 								<div class="qty">2</div>
 							</a>
-						</div>
+						</div> -->
+						<!-- Dropdown List Login -->
+
 						<!-- /Wishlist -->
 
 						<!-- Cart -->
 						<div class="dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown"
+							<a href="" class="dropdown-toggle" data-toggle="dropdown"
 								aria-expanded="true"> <i class="fa fa-shopping-cart"></i> <span>Giỏ
 									hàng</span>
 								<div class="qty">${ TotalQuantyCart }</div>
@@ -160,13 +240,6 @@
 					</li>
 
 				</c:forEach>
-				<!-- <li class="active"><a href="#">Home</a></li>
-				<li><a href="#">Hot Deals</a></li>
-				<li><a href="#">Categories</a></li>
-				<li><a href="#">Laptops</a></li>
-				<li><a href="#">Smartphones</a></li>
-				<li><a href="#">Cameras</a></li>
-				<li><a href="#">Accessories</a></li> -->
 			</ul>
 			<!-- /NAV -->
 		</div>

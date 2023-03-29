@@ -69,4 +69,10 @@ public class CartController extends BaseController {
 		session.setAttribute("TotalPriceCart", cartService.totalPrice(cart));
 		return "redirect:" + request.getHeader("Referer");
 	}
+	
+	@RequestMapping(value = "/check-out")
+	public ModelAndView checkOut(HttpServletRequest request, HttpSession session) {
+		_mvShare.setViewName("user/pay/checkout");
+		return _mvShare;
+	}
 }
