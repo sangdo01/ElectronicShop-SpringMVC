@@ -16,7 +16,7 @@
 			<ul class="header-links pull-right">
 				<li><a href="#"> <!-- <i class="fa fa-dollar"></i> -->₫ VNĐ
 				</a></li>
-				<li><a href="#"><i class="fa fa-user-o"></i> Đăng Nhập</a></li>
+				<li><a href="<c:url value="/dang-ky/" />"><i class="fa fa-user-o"></i> Đăng Nhập</a></li>
 			</ul>
 		</div>
 	</div>
