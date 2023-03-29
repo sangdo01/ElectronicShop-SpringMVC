@@ -1,5 +1,7 @@
 package ElectronicShop.Cotroller.User;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -35,8 +37,23 @@ public class UserController extends BaseController {
 		return _mvShare;
 	}
 
-	@RequestMapping(value = { "/dang-nhap" }, method = RequestMethod.GET)
+	@RequestMapping(value = "/dang-nhap", method = RequestMethod.GET)
 	public ModelAndView Login() {
+		_mvShare.setViewName("user/account/login");
+		_mvShare.addObject("userLoginModel", new Users());
+		return _mvShare;
+	}
+
+	@RequestMapping(value = "/dang-nhap", method = RequestMethod.POST)
+	public ModelAndView LoginAccount(HttpSession session, @ModelAttribute("userLoginModel") Users user) {
+		boolean check = accountService.checkAccount(user);
+		if (check) {
+			_mvShare.setViewName("redirect:trang-chu");
+			session.setAttribute("LoginInfo", user);
+			return _mvShare;
+		} else {
+			_mvShare.addObject("statusLogin", "Đăng nhập thất bại!");
+		}
 		_mvShare.setViewName("user/account/login");
 		return _mvShare;
 	}
