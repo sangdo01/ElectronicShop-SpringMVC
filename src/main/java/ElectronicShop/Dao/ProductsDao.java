@@ -1,5 +1,6 @@
 package ElectronicShop.Dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
@@ -57,7 +58,6 @@ public class ProductsDao extends BaseDao {
 		if (newProduct) {
 			sql.append("limit 12 ");
 		}
-
 		/* sql = sqlString(); */
 		return sql.toString();
 	}
@@ -79,20 +79,44 @@ public class ProductsDao extends BaseDao {
 		String sql = sqlProducts(YES, NO);
 		List<ProductsDto> listProducts = _jdbcTemplate.query(sql, new ProductsDtoMapper());
 		return listProducts;
-
 	}
 
 	public List<ProductsDto> getAllProductsByID(int id) {
 		String sql = sqlProductsByID(id).toString();
 		List<ProductsDto> listProducts = _jdbcTemplate.query(sql, new ProductsDtoMapper());
 		return listProducts;
-
 	}
 
 	public List<ProductsDto> getDataProductsPaginate(int id, int start, int totalPage) {
-		String sql = sqlProductsPaginate(id, start, totalPage);
-		List<ProductsDto> listProducts = _jdbcTemplate.query(sql, new ProductsDtoMapper());
+		StringBuffer sqlGetDataByID = sqlProductsByID(id);
+		List<ProductsDto> listProductsByID = _jdbcTemplate.query(sqlGetDataByID.toString(), new ProductsDtoMapper());
+		List<ProductsDto> listProducts = new ArrayList<ProductsDto>();
+		if (listProductsByID.size() > 0) {
+			String sql = sqlProductsPaginate(id, start, totalPage);
+			listProducts = _jdbcTemplate.query(sql, new ProductsDtoMapper());
+			
+		}
 		return listProducts;
 
+	}
+
+	private String sqlProductByID(int id) {
+		StringBuffer sql = sqlString();
+		sql.append("where 1 = 1 ");
+		sql.append("and p.id = " + id + " ");
+		sql.append("limit 1 ");
+		return sql.toString();
+	}
+	
+	public List<ProductsDto> getProductByID(int id) {
+		String sql = sqlProductByID(id);
+		List<ProductsDto> listProduct = _jdbcTemplate.query(sql, new ProductsDtoMapper());
+		return listProduct;
+	}
+	
+	public ProductsDto findProductByID(int id) {
+		String sql = sqlProductByID(id);
+		ProductsDto product = _jdbcTemplate.queryForObject(sql, new ProductsDtoMapper());
+		return product;
 	}
 }

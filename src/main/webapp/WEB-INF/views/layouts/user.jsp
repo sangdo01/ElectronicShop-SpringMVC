@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator"
 	prefix="decorator"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@include file="/WEB-INF/views/layouts/user/taglib.jsp"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -71,6 +71,8 @@
 	<script src="<c:url value="/assets/user/js/nouislider.min.js" />"></script>
 	<script src="<c:url value="/assets/user/js/jquery.zoom.min.js" />"></script>
 	<script src="<c:url value="/assets/user/js/main.js" />"></script>
+
+	<decorator:getProperty property="page.script"></decorator:getProperty>
 
 </body>
 </html>
