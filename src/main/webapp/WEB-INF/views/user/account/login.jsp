@@ -30,7 +30,7 @@
 	<div class="container">
 		<!-- row -->
 		<div class="row">
-			<form>
+			<form:form action="dang-nhap" method="POST" modelAttribute="user">
 				<div class="form-group">
 					<label for="exampleInputEmail1">Email</label> <input type="email"
 						class="form-control" id="exampleInputEmail1"
@@ -50,7 +50,7 @@
 
 				</div>
 				<button type="submit" class="btn btn-primary">Đăng nhập</button>
-			</form>
+			</form:form>
 		</div>
 		<!-- /row -->
 	</div>
