@@ -79,40 +79,32 @@
 							</a>
 							<div class="cart-dropdown">
 								<div class="cart-list">
-									<div class="product-widget">
-										<div class="product-img">
-											<img src="<c:url value="/assets/user/img/product01.png" />"
-												alt="">
+									<c:forEach var="item" items="${ Cart }">
+										<div class="product-widget">
+											<div class="product-img">
+												<img
+													src="<c:url value="/assets/user/img/product/${ item.value.product.img }" />"
+													alt="">
+											</div>
+											<div class="product-body">
+												<h3 class="product-name">
+													<a href="#">${ item.value.product.name }</a>
+												</h3>
+												<h4 class="product-price">
+													<span class="qty">${ item.value.quanty }x</span>
+													<fmt:formatNumber type="number" groupingUsed="true"
+														value="${ item.value.product.price }" />
+													₫
+												</h4>
+											</div>
+											<button class="delete">
+												<i class="fa fa-close"></i>
+											</button>
 										</div>
-										<div class="product-body">
-											<h3 class="product-name">
-												<a href="#">product name goes here</a>
-											</h3>
-											<h4 class="product-price">
-												<span class="qty">1x</span>$980.00
-											</h4>
-										</div>
-										<button class="delete">
-											<i class="fa fa-close"></i>
-										</button>
-									</div>
+									</c:forEach>
 
-									<div class="product-widget">
-										<div class="product-img">
-											<img src="./img/product02.png" alt="">
-										</div>
-										<div class="product-body">
-											<h3 class="product-name">
-												<a href="#">product name goes here</a>
-											</h3>
-											<h4 class="product-price">
-												<span class="qty">3x</span>$980.00
-											</h4>
-										</div>
-										<button class="delete">
-											<i class="fa fa-close"></i>
-										</button>
-									</div>
+
+
 								</div>
 								<div class="cart-summary">
 									<small>${ TotalQuantyCart } - Sản phẩm đã chọn</small>

@@ -72,6 +72,8 @@
 	<script src="<c:url value="/assets/user/js/jquery.zoom.min.js" />"></script>
 	<script src="<c:url value="/assets/user/js/main.js" />"></script>
 
+	<decorator:getProperty property="page.script"></decorator:getProperty>
+
 </body>
 </html>
 
