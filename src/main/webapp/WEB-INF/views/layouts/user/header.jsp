@@ -2,53 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@include file="/WEB-INF/views/layouts/user/taglib.jsp"%>
 <!-- HEADER -->
-<style>
-.dropdown-login {
-	float: left;
-	overflow: hidden;
-}
 
-.dropdown-login .dropbtn-login {
-	font-size: 16px;
-	border: none;
-	outline: none;
-	color: white;
-	padding: 14px 16px;
-	background-color: inherit;
-	font-family: inherit;
-	margin: 0;
-}
-
-.dropdown-login:hover .dropbtn-login {
-	background-color: red;
-}
-
-.dropdown-content {
-	display: none;
-	position: absolute;
-	background-color: #1e1f29;
-	min-width: 160px;
-	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-	z-index: 1;
-}
-
-.dropdown-content a {
-	float: none;
-	color: black;
-	padding: 12px 16px;
-	text-decoration: none;
-	display: block;
-	text-align: left;
-}
-
-.dropdown-content a:hover {
-	background-color: #ddd;
-}
-
-.dropdown-login:hover .dropdown-content {
-	display: block;
-}
-</style>
 <header>
 	<!-- TOP HEADER -->
 	<div id="top-header">
@@ -121,7 +75,7 @@
 					<div class="header-search">
 						<form>
 
-							<select class="input-select">
+							<%-- <select class="input-select">
 								<option value="0">Tất cả thể loại</option>
 								<c:forEach var="item" items="${ cateShare }">
 									<option value="1">${ item.name }</option>
@@ -129,7 +83,7 @@
 								<!-- <option value="0">All Categories</option>
 
 								<option value="1">Category 02</option> -->
-							</select> <input class="input" placeholder="Tìm kiếm tại đây">
+							</select> --%> <input class="input" placeholder="Tìm kiếm tại đây">
 							<button class="search-btn">Tìm kiếm</button>
 						</form>
 					</div>
