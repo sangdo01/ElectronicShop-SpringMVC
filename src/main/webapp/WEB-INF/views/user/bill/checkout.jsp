@@ -36,29 +36,37 @@
 					<div class="section-title">
 						<h3 class="title">Thông tin thanh toán</h3>
 					</div>
-					<div class="form-group">
-						<input class="input" type="text" name="name" placeholder="Họ tên">
-					</div>
-					<div class="form-group">
-						<input class="input" type="email" name="email" placeholder="Email">
-					</div>
-					<div class="form-group">
-						<input class="input" type="tel" name="tel"
-							placeholder="Số điện thoại">
-					</div>
-					<div class="form-group">
-						<input class="input" type="text" name="address"
-							placeholder="Đại chỉ">
-					</div>
-					<!-- Order notes -->
-					<div class="order-notes">
-						<textarea class="input" placeholder="Ghi chú"></textarea>
-					</div>
-					<!-- /Order notes -->
-					<a href="#" class="primary-btn order-submit" style="margin-top: 40px; margin-bottom: 20px">Đặt hàng</a>
+					<form:form action="checkout" method="post" modelAttribute="bills">
 
+						<div class="form-group">
+							<form:input path="display_name" class="input" type="text"
+								placeholder="Họ tên" />
+						</div>
+						<div class="form-group">
+							<form:input path="user" class="input" type="text"
+								placeholder="Email" />
+						</div>
+						<div class="form-group">
+							<form:input path="phone" class="input" type="tel"
+								placeholder="Số điện thoại" />
+						</div>
+						<div class="form-group">
+							<form:textarea path="address" class="input" rows="5" cols="30"
+								placeholder="Đại chỉ" />
+						</div>
+						<!-- Order notes -->
+						<div class="order-notes">
+							<form:textarea path="note" rows="5" cols="30" class="input"
+								placeholder="Ghi chú" />
+						</div>
+						<!-- /Order notes -->
+						<!-- <a href="#" class="primary-btn order-submit"
+							style="margin-top: 40px; margin-bottom: 20px">Đặt hàng</a> -->
+						<button type="submit" class="primary-btn order-submit"
+							style="margin-top: 40px; margin-bottom: 20px">Đặt hàng</button>
 
-	
+					</form:form>
+
 					<div class="form-group">
 						<div class="input-checkbox">
 							<input type="checkbox" id="create-account"> <label

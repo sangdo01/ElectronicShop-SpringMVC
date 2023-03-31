@@ -83,7 +83,8 @@
 								<!-- <option value="0">All Categories</option>
 
 								<option value="1">Category 02</option> -->
-							</select> --%> <input class="input" placeholder="Tìm kiếm tại đây">
+							</select> --%>
+							<input class="input" placeholder="Tìm kiếm tại đây">
 							<button class="search-btn">Tìm kiếm</button>
 						</form>
 					</div>
@@ -151,7 +152,8 @@
 								</div>
 								<div class="cart-btns">
 									<a href="<c:url value="/gio-hang" />">Xem giỏ hàng</a> <a
-										href="#">Checkout <i class="fa fa-arrow-circle-right"></i></a>
+										href="<c:url value="/checkout" />">Checkout <i
+										class="fa fa-arrow-circle-right"></i></a>
 								</div>
 							</div>
 						</div>

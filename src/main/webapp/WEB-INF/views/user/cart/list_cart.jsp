@@ -72,6 +72,7 @@ hr.boder-cart {
 			</div>
 			<div class="container">
 				<table id="cart" class="table table-hover table-condensed">
+
 					<thead>
 						<tr>
 							<th style="width: 40%">Sản phẩm</th>
@@ -108,16 +109,18 @@ hr.boder-cart {
 									₫</td>
 								<td data-th="Quantity"><input
 									id="quanty-cart-${ item.key }" type="number" min="0" max="1000"
-									class="form-control text-center" value="${ item.value.quanty }"></td>
+									class="form-control text-center" type="text" value="${ item.value.quanty }"></td>
 								<td data-th="Subtotal" class="text-center"><fmt:formatNumber
 										type="number" groupingUsed="true"
 										value="${ item.value.totalPrice } " /> ₫</td>
-								<td class="actions" data-th=""><button
-										data-id="${ item.key }" class="btn btn-info btn-sm edit-cart">
+								<td class="actions" data-th="">
+									<button data-id="${ item.key }"
+										class="btn btn-info btn-sm edit-cart">
 										<i class="fa fa-refresh"></i>
 									</button> <a href="<c:url value="/delete-cart/${ item.key }" />"
 									class="btn btn-danger btn-sm"> <i class="fa fa-trash-o"></i>
-								</a></td>
+								</a>
+								</td>
 							</tr>
 						</c:forEach>
 
@@ -127,15 +130,17 @@ hr.boder-cart {
 							<td class="text-center"><strong>Total $ 5.11</strong></td>
 						</tr>
 						<tr>
-							<td><a href="#" class="btn btn-warning"><i
-									class="fa fa-angle-left"></i> Tiếp tục mua sắm</a></td>
+							<td><a href="<c:url value="/trang-chu" />"
+								class="btn btn-warning"><i class="fa fa-angle-left"></i>
+									Tiếp tục mua sắm</a></td>
 							<td colspan="2" class="hidden-xs"></td>
 							<td class="hidden-xs text-center"><strong>Tổng tiền
 									<fmt:formatNumber type="number" groupingUsed="true"
 										value="${ TotalPriceCart } " /> ₫
 							</strong></td>
-							<td><a href="#" class="btn btn-success btn-block">Thanh
-									toán <i class="fa fa-angle-right"></i>
+							<td><a href="<c:url value="/checkout" />"
+								class="btn btn-success btn-block">Thanh toán <i
+									class="fa fa-angle-right"></i>
 							</a></td>
 						</tr>
 					</tfoot>

@@ -209,14 +209,14 @@
 												class="fa fa-star"></i>
 										</div>
 										<div class="product-btns">
-											<button class="add-to-wishlist">
+											<!-- <button class="add-to-wishlist">
 												<i class="fa fa-heart-o"></i><span class="tooltipp">add
 													to wishlist</span>
 											</button>
 											<button class="add-to-compare">
 												<i class="fa fa-exchange"></i><span class="tooltipp">add
 													to compare</span>
-											</button>
+											</button> -->
 											<a href="<c:url value="/chi-tiet-san-pham/${item.id_product }" />" class="quick-view">
 												<i class="fa fa-eye"></i><span class="tooltipp">Xem sản phẩm</span>
 											</a>
