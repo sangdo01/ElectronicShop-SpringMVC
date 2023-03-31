@@ -2,75 +2,72 @@
 	pageEncoding="UTF-8"%>
 <%@include file="/WEB-INF/views/layouts/user/taglib.jsp"%>
 <title>Trang chủ</title>
+<style>
+</style>
 <!-- SECTION -->
 <div class="section">
 	<!-- container -->
 	<div class="container">
 		<!-- row -->
 		<div class="row">
-			<!-- shop -->
-			<c:forEach var="item" items="${ slides }">
+			<div class="slider">
+				<div class="slide_viewer">
+					<div class="slide_group">
+						<c:forEach var="item" items="${ slides }">
+							<div class="slide">
+								<img class="mySlides"
+									src="<c:url value="/assets/user/img/slide/${ item.img }" /> "
+									style="width: 100%; object-fit: contain;">
+								<div class="text-block">
+									<h4>${ item.caption }</h4>
+									<p>${ item.content }</p>
+								</div>
 
-				<div class="col-md-4 col-xs-6">
-					<div class="shop">
-						<div class="shop-img">
-							<img src="<c:url value="/assets/user/img/slide/${ item.img }" />"
-								alt="">
-						</div>
-						<div class="shop-body">
-							<h3>
-								${ item.caption }<br>${ item.content }
-							</h3>
-							<a href="#" class="cta-btn">Shop now <i
-								class="fa fa-arrow-circle-right"></i></a>
-						</div>
-					</div>
-				</div>
-				<!-- /shop -->
-			</c:forEach>
-
-
-
-			<!-- shop -->
-			<div class="col-md-4 col-xs-6">
-				<div class="shop">
-					<div class="shop-img">
-						<img src="./img/shop03.png" alt="">
-					</div>
-					<div class="shop-body">
-						<h3>
-							Accessories<br>Collection
-						</h3>
-						<a href="#" class="cta-btn">Shop now <i
-							class="fa fa-arrow-circle-right"></i></a>
+							</div>
+						</c:forEach>
 					</div>
 				</div>
 			</div>
-			<!-- /shop -->
+			<!-- End // .slider -->
 
-			<!-- shop -->
-			<div class="col-md-4 col-xs-6">
-				<div class="shop">
-					<div class="shop-img">
-						<img src="./img/shop02.png" alt="">
-					</div>
-					<div class="shop-body">
-						<h3>
-							Cameras<br>Collection
-						</h3>
-						<a href="#" class="cta-btn">Shop now <i
-							class="fa fa-arrow-circle-right"></i></a>
-					</div>
+			<div class="slide_buttons"></div>
+
+			<div class="directional_nav">
+				<div class="previous_btn" title="Previous">
+					<svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						width="65px" height="65px" viewBox="-11 -11.5 65 66">
+      <g>
+        <g>
+          <path fill="#474544"
+							d="M-10.5,22.118C-10.5,4.132,4.133-10.5,22.118-10.5S54.736,4.132,54.736,22.118
+			c0,17.985-14.633,32.618-32.618,32.618S-10.5,40.103-10.5,22.118z M-8.288,22.118c0,16.766,13.639,30.406,30.406,30.406 c16.765,0,30.405-13.641,30.405-30.406c0-16.766-13.641-30.406-30.405-30.406C5.35-8.288-8.288,5.352-8.288,22.118z" />
+          <path fill="#474544"
+							d="M25.43,33.243L14.628,22.429c-0.433-0.432-0.433-1.132,0-1.564L25.43,10.051c0.432-0.432,1.132-0.432,1.563,0	c0.431,0.431,0.431,1.132,0,1.564L16.972,21.647l10.021,10.035c0.432,0.433,0.432,1.134,0,1.564	c-0.215,0.218-0.498,0.323-0.78,0.323C25.929,33.569,25.646,33.464,25.43,33.243z" />
+        </g>
+      </g>
+    </svg>
+				</div>
+				<div class="next_btn" title="Next">
+					<svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						width="65px" height="65px" viewBox="-11 -11.5 65 66">
+      <g>
+        <g>
+          <path fill="#474544"
+							d="M22.118,54.736C4.132,54.736-10.5,40.103-10.5,22.118C-10.5,4.132,4.132-10.5,22.118-10.5	c17.985,0,32.618,14.632,32.618,32.618C54.736,40.103,40.103,54.736,22.118,54.736z M22.118-8.288	c-16.765,0-30.406,13.64-30.406,30.406c0,16.766,13.641,30.406,30.406,30.406c16.768,0,30.406-13.641,30.406-30.406 C52.524,5.352,38.885-8.288,22.118-8.288z" />
+          <path fill="#474544"
+							d="M18.022,33.569c 0.282,0-0.566-0.105-0.781-0.323c-0.432-0.431-0.432-1.132,0-1.564l10.022-10.035 			L17.241,11.615c 0.431-0.432-0.431-1.133,0-1.564c0.432-0.432,1.132-0.432,1.564,0l10.803,10.814c0.433,0.432,0.433,1.132,0,1.564 L18.805,33.243C18.59,33.464,18.306,33.569,18.022,33.569z" />
+        </g>
+      </g>
+    </svg>
 				</div>
 			</div>
-			<!-- /shop -->
+			<!-- End // .directional_nav -->
+
 		</div>
-		<!-- /row -->
 	</div>
-	<!-- /container -->
 </div>
-<!-- /SECTION -->
-
 <!-- SECTION -->
 <div class="section">
 	<!-- container -->
@@ -142,24 +139,25 @@
 														class="fa fa-star"></i>
 												</div>
 												<div class="product-btns">
-													<button class="add-to-wishlist">
+													<!-- <button class="add-to-wishlist">
 														<i class="fa fa-heart-o"></i><span class="tooltipp">add
 															to wishlist</span>
 													</button>
 													<button class="add-to-compare">
 														<i class="fa fa-exchange"></i><span class="tooltipp">add
 															to compare</span>
-													</button>
+													</button> -->
 													<a class="quick-view"
-														href="chi-tiet-san-pham/${ item.id_product }"> <i
-														class="fa fa-eye"></i><span class="tooltipp">Xem
-															chi tiết</span>
+														href="<c:url value="/chi-tiet-san-pham/${item.id_product }" />">
+														<i class="fa fa-eye"></i><span class="tooltipp">
+															Xem sản phẩm</span>
 													</a>
 												</div>
 											</div>
 											<div class="add-to-cart">
-												<a href="<c:url value="/add-cart/${ item.id_product }" />" class="add-to-cart-btn">
-													<i class="fa fa-shopping-cart"></i> add to cart
+												<a href="<c:url value="/add-cart/${ item.id_product }" />"
+													class="add-to-cart-btn"> <i class="fa fa-shopping-cart"></i>
+													Thêm giỏ hàng
 												</a>
 											</div>
 										</div>
@@ -185,8 +183,55 @@
 </div>
 <!-- /SECTION -->
 
+
+
+<!-- HOT DEAL SECTION -->
+<div id="hot-deal" class="section">
+	<!-- container -->
+	<div class="container">
+		<!-- row -->
+		<div class="row">
+			<div class="col-md-12">
+				<div class="hot-deal">
+					<ul class="hot-deal-countdown">
+						<li>
+							<div>
+								<h3>02</h3>
+								<span>Days</span>
+							</div>
+						</li>
+						<li>
+							<div>
+								<h3>10</h3>
+								<span>Hours</span>
+							</div>
+						</li>
+						<li>
+							<div>
+								<h3>34</h3>
+								<span>Mins</span>
+							</div>
+						</li>
+						<li>
+							<div>
+								<h3>60</h3>
+								<span>Secs</span>
+							</div>
+						</li>
+					</ul>
+					<h2 class="text-uppercase">hot deal this week</h2>
+					<p>New Collection Up to 50% OFF</p>
+					<a class="primary-btn cta-btn" href="#">Shop now</a>
+				</div>
+			</div>
+		</div>
+		<!-- /row -->
+	</div>
+	<!-- /container -->
+</div>
+<!-- /HOT DEAL SECTION -->
 <!-- SECTION Sản Phẩm Nổi Bật-->
-<div class="section">
+<div class="section" style="margin-bottom: 40px">
 	<!-- container -->
 	<div class="container">
 		<!-- row -->
@@ -271,9 +316,10 @@
 												</div>
 											</div>
 											<div class="add-to-cart">
-												<button class="add-to-cart-btn">
-													<i class="fa fa-shopping-cart"></i> add to cart
-												</button>
+												<a href="<c:url value="/add-cart/${ item.id_product }" />"
+													class="add-to-cart-btn"> <i class="fa fa-shopping-cart"></i>
+													Add to cart
+												</a>
 											</div>
 										</div>
 										<!-- /product -->
@@ -301,691 +347,97 @@
 </div>
 <!-- /SECTION -->
 
-<!-- HOT DEAL SECTION -->
-<div id="hot-deal" class="section">
-	<!-- container -->
-	<div class="container">
-		<!-- row -->
-		<div class="row">
-			<div class="col-md-12">
-				<div class="hot-deal">
-					<ul class="hot-deal-countdown">
-						<li>
-							<div>
-								<h3>02</h3>
-								<span>Days</span>
-							</div>
-						</li>
-						<li>
-							<div>
-								<h3>10</h3>
-								<span>Hours</span>
-							</div>
-						</li>
-						<li>
-							<div>
-								<h3>34</h3>
-								<span>Mins</span>
-							</div>
-						</li>
-						<li>
-							<div>
-								<h3>60</h3>
-								<span>Secs</span>
-							</div>
-						</li>
-					</ul>
-					<h2 class="text-uppercase">hot deal this week</h2>
-					<p>New Collection Up to 50% OFF</p>
-					<a class="primary-btn cta-btn" href="#">Shop now</a>
-				</div>
-			</div>
-		</div>
-		<!-- /row -->
-	</div>
-	<!-- /container -->
-</div>
-<!-- /HOT DEAL SECTION -->
 
-<!-- SECTION -->
-<div class="section">
-	<!-- container -->
-	<div class="container">
-		<!-- row -->
-		<div class="row">
+<content tag="script"> <script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+	$(".slider").each(function() {
+		var $this = $(this);
+		var $group = $this.find(".slide_group");
+		var $slides = $this.find(".slide");
+		var bulletArray = [];
+		var currentIndex = 0;
+		var timeout;
 
-			<!-- section title -->
-			<div class="col-md-12">
-				<div class="section-title">
-					<h3 class="title">Top selling</h3>
-					<div class="section-nav">
-						<ul class="section-tab-nav tab-nav">
-							<li class="active"><a data-toggle="tab" href="#tab2">Laptops</a></li>
-							<li><a data-toggle="tab" href="#tab2">Smartphones</a></li>
-							<li><a data-toggle="tab" href="#tab2">Cameras</a></li>
-							<li><a data-toggle="tab" href="#tab2">Accessories</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<!-- /section title -->
+		function move(newIndex) {
+			var animateLeft, slideLeft;
 
-			<!-- Products tab & slick -->
-			<div class="col-md-12">
-				<div class="row">
-					<div class="products-tabs">
-						<!-- tab -->
-						<div id="tab2" class="tab-pane fade in active">
-							<div class="products-slick" data-nav="#slick-nav-2">
-								<!-- product -->
-								<div class="product">
-									<div class="product-img">
-										<img src="./img/product06.png" alt="">
-										<div class="product-label">
-											<span class="sale">-30%</span> <span class="new">NEW</span>
-										</div>
-									</div>
-									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name">
-											<a href="#">product name goes here</a>
-										</h3>
-										<h4 class="product-price">
-											$980.00
-											<del class="product-old-price">$990.00</del>
-										</h4>
-										<div class="product-rating">
-											<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-												class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-												class="fa fa-star"></i>
-										</div>
-										<div class="product-btns">
-											<button class="add-to-wishlist">
-												<i class="fa fa-heart-o"></i><span class="tooltipp">add
-													to wishlist</span>
-											</button>
-											<button class="add-to-compare">
-												<i class="fa fa-exchange"></i><span class="tooltipp">add
-													to compare</span>
-											</button>
-											<button class="quick-view">
-												<i class="fa fa-eye"></i><span class="tooltipp">quick
-													view</span>
-											</button>
-										</div>
-									</div>
-									<div class="add-to-cart">
-										<button class="add-to-cart-btn">
-											<i class="fa fa-shopping-cart"></i> add to cart
-										</button>
-									</div>
-								</div>
-								<!-- /product -->
+			advance();
 
-								<!-- product -->
-								<div class="product">
-									<div class="product-img">
-										<img src="./img/product07.png" alt="">
-										<div class="product-label">
-											<span class="new">NEW</span>
-										</div>
-									</div>
-									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name">
-											<a href="#">product name goes here</a>
-										</h3>
-										<h4 class="product-price">
-											$980.00
-											<del class="product-old-price">$990.00</del>
-										</h4>
-										<div class="product-rating">
-											<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-												class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-												class="fa fa-star-o"></i>
-										</div>
-										<div class="product-btns">
-											<button class="add-to-wishlist">
-												<i class="fa fa-heart-o"></i><span class="tooltipp">add
-													to wishlist</span>
-											</button>
-											<button class="add-to-compare">
-												<i class="fa fa-exchange"></i><span class="tooltipp">add
-													to compare</span>
-											</button>
-											<button class="quick-view">
-												<i class="fa fa-eye"></i><span class="tooltipp">quick
-													view</span>
-											</button>
-										</div>
-									</div>
-									<div class="add-to-cart">
-										<button class="add-to-cart-btn">
-											<i class="fa fa-shopping-cart"></i> add to cart
-										</button>
-									</div>
-								</div>
-								<!-- /product -->
+			if ($group.is(":animated") || currentIndex === newIndex) {
+				return;
+			}
 
-								<!-- product -->
-								<div class="product">
-									<div class="product-img">
-										<img src="./img/product08.png" alt="">
-										<div class="product-label">
-											<span class="sale">-30%</span>
-										</div>
-									</div>
-									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name">
-											<a href="#">product name goes here</a>
-										</h3>
-										<h4 class="product-price">
-											$980.00
-											<del class="product-old-price">$990.00</del>
-										</h4>
-										<div class="product-rating"></div>
-										<div class="product-btns">
-											<button class="add-to-wishlist">
-												<i class="fa fa-heart-o"></i><span class="tooltipp">add
-													to wishlist</span>
-											</button>
-											<button class="add-to-compare">
-												<i class="fa fa-exchange"></i><span class="tooltipp">add
-													to compare</span>
-											</button>
-											<button class="quick-view">
-												<i class="fa fa-eye"></i><span class="tooltipp">quick
-													view</span>
-											</button>
-										</div>
-									</div>
-									<div class="add-to-cart">
-										<button class="add-to-cart-btn">
-											<i class="fa fa-shopping-cart"></i> add to cart
-										</button>
-									</div>
-								</div>
-								<!-- /product -->
+			bulletArray[currentIndex].removeClass("active");
+			bulletArray[newIndex].addClass("active");
 
-								<!-- product -->
-								<div class="product">
-									<div class="product-img">
-										<img src="./img/product09.png" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name">
-											<a href="#">product name goes here</a>
-										</h3>
-										<h4 class="product-price">
-											$980.00
-											<del class="product-old-price">$990.00</del>
-										</h4>
-										<div class="product-rating">
-											<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-												class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-												class="fa fa-star"></i>
-										</div>
-										<div class="product-btns">
-											<button class="add-to-wishlist">
-												<i class="fa fa-heart-o"></i><span class="tooltipp">add
-													to wishlist</span>
-											</button>
-											<button class="add-to-compare">
-												<i class="fa fa-exchange"></i><span class="tooltipp">add
-													to compare</span>
-											</button>
-											<button class="quick-view">
-												<i class="fa fa-eye"></i><span class="tooltipp">quick
-													view</span>
-											</button>
-										</div>
-									</div>
-									<div class="add-to-cart">
-										<button class="add-to-cart-btn">
-											<i class="fa fa-shopping-cart"></i> add to cart
-										</button>
-									</div>
-								</div>
-								<!-- /product -->
+			if (newIndex > currentIndex) {
+				slideLeft = "100%";
+				animateLeft = "-100%";
+			} else {
+				slideLeft = "-100%";
+				animateLeft = "100%";
+			}
 
-								<!-- product -->
-								<div class="product">
-									<div class="product-img">
-										<img src="./img/product01.png" alt="">
-									</div>
-									<div class="product-body">
-										<p class="product-category">Category</p>
-										<h3 class="product-name">
-											<a href="#">product name goes here</a>
-										</h3>
-										<h4 class="product-price">
-											$980.00
-											<del class="product-old-price">$990.00</del>
-										</h4>
-										<div class="product-rating">
-											<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-												class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-												class="fa fa-star"></i>
-										</div>
-										<div class="product-btns">
-											<button class="add-to-wishlist">
-												<i class="fa fa-heart-o"></i><span class="tooltipp">add
-													to wishlist</span>
-											</button>
-											<button class="add-to-compare">
-												<i class="fa fa-exchange"></i><span class="tooltipp">add
-													to compare</span>
-											</button>
-											<button class="quick-view">
-												<i class="fa fa-eye"></i><span class="tooltipp">quick
-													view</span>
-											</button>
-										</div>
-									</div>
-									<div class="add-to-cart">
-										<button class="add-to-cart-btn">
-											<i class="fa fa-shopping-cart"></i> add to cart
-										</button>
-									</div>
-								</div>
-								<!-- /product -->
-							</div>
-							<div id="slick-nav-2" class="products-slick-nav"></div>
-						</div>
-						<!-- /tab -->
-					</div>
-				</div>
-			</div>
-			<!-- /Products tab & slick -->
-		</div>
-		<!-- /row -->
-	</div>
-	<!-- /container -->
-</div>
-<!-- /SECTION -->
+			$slides.eq(newIndex).css({
+				display : "block",
+				left : slideLeft
+			});
+			$group.animate({
+				left : animateLeft
+			}, function() {
+				$slides.eq(currentIndex).css({
+					display : "none"
+				});
+				$slides.eq(newIndex).css({
+					left : 0
+				});
+				$group.css({
+					left : 0
+				});
+				currentIndex = newIndex;
+			});
+		}
 
-<!-- SECTION -->
-<div class="section">
-	<!-- container -->
-	<div class="container">
-		<!-- row -->
-		<div class="row">
-			<div class="col-md-4 col-xs-6">
-				<div class="section-title">
-					<h4 class="title">Top selling</h4>
-					<div class="section-nav">
-						<div id="slick-nav-3" class="products-slick-nav"></div>
-					</div>
-				</div>
+		function advance() {
+			clearTimeout(timeout);
+			timeout = setTimeout(function() {
+				if (currentIndex < $slides.length - 1) {
+					move(currentIndex + 1);
+				} else {
+					move(0);
+				}
+			}, 4000);
+		}
 
-				<div class="products-widget-slick" data-nav="#slick-nav-3">
-					<div>
-						<!-- product widget -->
-						<div class="product-widget">
-							<div class="product-img">
-								<img src="./img/product07.png" alt="">
-							</div>
-							<div class="product-body">
-								<p class="product-category">Category</p>
-								<h3 class="product-name">
-									<a href="#">product name goes here</a>
-								</h3>
-								<h4 class="product-price">
-									$980.00
-									<del class="product-old-price">$990.00</del>
-								</h4>
-							</div>
-						</div>
-						<!-- /product widget -->
+		$(".next_btn").on("click", function() {
+			if (currentIndex < $slides.length - 1) {
+				move(currentIndex + 1);
+			} else {
+				move(0);
+			}
+		});
 
-						<!-- product widget -->
-						<div class="product-widget">
-							<div class="product-img">
-								<img src="./img/product08.png" alt="">
-							</div>
-							<div class="product-body">
-								<p class="product-category">Category</p>
-								<h3 class="product-name">
-									<a href="#">product name goes here</a>
-								</h3>
-								<h4 class="product-price">
-									$980.00
-									<del class="product-old-price">$990.00</del>
-								</h4>
-							</div>
-						</div>
-						<!-- /product widget -->
+		$(".previous_btn").on("click", function() {
+			if (currentIndex !== 0) {
+				move(currentIndex - 1);
+			} else {
+				move(3);
+			}
+		});
 
-						<!-- product widget -->
-						<div class="product-widget">
-							<div class="product-img">
-								<img src="./img/product09.png" alt="">
-							</div>
-							<div class="product-body">
-								<p class="product-category">Category</p>
-								<h3 class="product-name">
-									<a href="#">product name goes here</a>
-								</h3>
-								<h4 class="product-price">
-									$980.00
-									<del class="product-old-price">$990.00</del>
-								</h4>
-							</div>
-						</div>
-						<!-- product widget -->
-					</div>
+		$.each($slides, function(index) {
+			var $button = $('<a class="slide_btn">&bull;</a>');
 
-					<div>
-						<!-- product widget -->
-						<div class="product-widget">
-							<div class="product-img">
-								<img src="./img/product01.png" alt="">
-							</div>
-							<div class="product-body">
-								<p class="product-category">Category</p>
-								<h3 class="product-name">
-									<a href="#">product name goes here</a>
-								</h3>
-								<h4 class="product-price">
-									$980.00
-									<del class="product-old-price">$990.00</del>
-								</h4>
-							</div>
-						</div>
-						<!-- /product widget -->
+			if (index === currentIndex) {
+				$button.addClass("active");
+			}
+			$button.on("click", function() {
+				move(index);
+			}).appendTo(".slide_buttons");
+			bulletArray.push($button);
+		});
 
-						<!-- product widget -->
-						<div class="product-widget">
-							<div class="product-img">
-								<img src="./img/product02.png" alt="">
-							</div>
-							<div class="product-body">
-								<p class="product-category">Category</p>
-								<h3 class="product-name">
-									<a href="#">product name goes here</a>
-								</h3>
-								<h4 class="product-price">
-									$980.00
-									<del class="product-old-price">$990.00</del>
-								</h4>
-							</div>
-						</div>
-						<!-- /product widget -->
-
-						<!-- product widget -->
-						<div class="product-widget">
-							<div class="product-img">
-								<img src="./img/product03.png" alt="">
-							</div>
-							<div class="product-body">
-								<p class="product-category">Category</p>
-								<h3 class="product-name">
-									<a href="#">product name goes here</a>
-								</h3>
-								<h4 class="product-price">
-									$980.00
-									<del class="product-old-price">$990.00</del>
-								</h4>
-							</div>
-						</div>
-						<!-- product widget -->
-					</div>
-				</div>
-			</div>
-
-			<div class="col-md-4 col-xs-6">
-				<div class="section-title">
-					<h4 class="title">Top selling</h4>
-					<div class="section-nav">
-						<div id="slick-nav-4" class="products-slick-nav"></div>
-					</div>
-				</div>
-
-				<div class="products-widget-slick" data-nav="#slick-nav-4">
-					<div>
-						<!-- product widget -->
-						<div class="product-widget">
-							<div class="product-img">
-								<img src="./img/product04.png" alt="">
-							</div>
-							<div class="product-body">
-								<p class="product-category">Category</p>
-								<h3 class="product-name">
-									<a href="#">product name goes here</a>
-								</h3>
-								<h4 class="product-price">
-									$980.00
-									<del class="product-old-price">$990.00</del>
-								</h4>
-							</div>
-						</div>
-						<!-- /product widget -->
-
-						<!-- product widget -->
-						<div class="product-widget">
-							<div class="product-img">
-								<img src="./img/product05.png" alt="">
-							</div>
-							<div class="product-body">
-								<p class="product-category">Category</p>
-								<h3 class="product-name">
-									<a href="#">product name goes here</a>
-								</h3>
-								<h4 class="product-price">
-									$980.00
-									<del class="product-old-price">$990.00</del>
-								</h4>
-							</div>
-						</div>
-						<!-- /product widget -->
-
-						<!-- product widget -->
-						<div class="product-widget">
-							<div class="product-img">
-								<img src="./img/product06.png" alt="">
-							</div>
-							<div class="product-body">
-								<p class="product-category">Category</p>
-								<h3 class="product-name">
-									<a href="#">product name goes here</a>
-								</h3>
-								<h4 class="product-price">
-									$980.00
-									<del class="product-old-price">$990.00</del>
-								</h4>
-							</div>
-						</div>
-						<!-- product widget -->
-					</div>
-
-					<div>
-						<!-- product widget -->
-						<div class="product-widget">
-							<div class="product-img">
-								<img src="./img/product07.png" alt="">
-							</div>
-							<div class="product-body">
-								<p class="product-category">Category</p>
-								<h3 class="product-name">
-									<a href="#">product name goes here</a>
-								</h3>
-								<h4 class="product-price">
-									$980.00
-									<del class="product-old-price">$990.00</del>
-								</h4>
-							</div>
-						</div>
-						<!-- /product widget -->
-
-						<!-- product widget -->
-						<div class="product-widget">
-							<div class="product-img">
-								<img src="./img/product08.png" alt="">
-							</div>
-							<div class="product-body">
-								<p class="product-category">Category</p>
-								<h3 class="product-name">
-									<a href="#">product name goes here</a>
-								</h3>
-								<h4 class="product-price">
-									$980.00
-									<del class="product-old-price">$990.00</del>
-								</h4>
-							</div>
-						</div>
-						<!-- /product widget -->
-
-						<!-- product widget -->
-						<div class="product-widget">
-							<div class="product-img">
-								<img src="./img/product09.png" alt="">
-							</div>
-							<div class="product-body">
-								<p class="product-category">Category</p>
-								<h3 class="product-name">
-									<a href="#">product name goes here</a>
-								</h3>
-								<h4 class="product-price">
-									$980.00
-									<del class="product-old-price">$990.00</del>
-								</h4>
-							</div>
-						</div>
-						<!-- product widget -->
-					</div>
-				</div>
-			</div>
-
-			<div class="clearfix visible-sm visible-xs"></div>
-
-			<div class="col-md-4 col-xs-6">
-				<div class="section-title">
-					<h4 class="title">Top selling</h4>
-					<div class="section-nav">
-						<div id="slick-nav-5" class="products-slick-nav"></div>
-					</div>
-				</div>
-
-				<div class="products-widget-slick" data-nav="#slick-nav-5">
-					<div>
-						<!-- product widget -->
-						<div class="product-widget">
-							<div class="product-img">
-								<img src="./img/product01.png" alt="">
-							</div>
-							<div class="product-body">
-								<p class="product-category">Category</p>
-								<h3 class="product-name">
-									<a href="#">product name goes here</a>
-								</h3>
-								<h4 class="product-price">
-									$980.00
-									<del class="product-old-price">$990.00</del>
-								</h4>
-							</div>
-						</div>
-						<!-- /product widget -->
-
-						<!-- product widget -->
-						<div class="product-widget">
-							<div class="product-img">
-								<img src="./img/product02.png" alt="">
-							</div>
-							<div class="product-body">
-								<p class="product-category">Category</p>
-								<h3 class="product-name">
-									<a href="#">product name goes here</a>
-								</h3>
-								<h4 class="product-price">
-									$980.00
-									<del class="product-old-price">$990.00</del>
-								</h4>
-							</div>
-						</div>
-						<!-- /product widget -->
-
-						<!-- product widget -->
-						<div class="product-widget">
-							<div class="product-img">
-								<img src="./img/product03.png" alt="">
-							</div>
-							<div class="product-body">
-								<p class="product-category">Category</p>
-								<h3 class="product-name">
-									<a href="#">product name goes here</a>
-								</h3>
-								<h4 class="product-price">
-									$980.00
-									<del class="product-old-price">$990.00</del>
-								</h4>
-							</div>
-						</div>
-						<!-- product widget -->
-					</div>
-
-					<div>
-						<!-- product widget -->
-						<div class="product-widget">
-							<div class="product-img">
-								<img src="./img/product04.png" alt="">
-							</div>
-							<div class="product-body">
-								<p class="product-category">Category</p>
-								<h3 class="product-name">
-									<a href="#">product name goes here</a>
-								</h3>
-								<h4 class="product-price">
-									$980.00
-									<del class="product-old-price">$990.00</del>
-								</h4>
-							</div>
-						</div>
-						<!-- /product widget -->
-
-						<!-- product widget -->
-						<div class="product-widget">
-							<div class="product-img">
-								<img src="./img/product05.png" alt="">
-							</div>
-							<div class="product-body">
-								<p class="product-category">Category</p>
-								<h3 class="product-name">
-									<a href="#">product name goes here</a>
-								</h3>
-								<h4 class="product-price">
-									$980.00
-									<del class="product-old-price">$990.00</del>
-								</h4>
-							</div>
-						</div>
-						<!-- /product widget -->
-
-						<!-- product widget -->
-						<div class="product-widget">
-							<div class="product-img">
-								<img src="./img/product06.png" alt="">
-							</div>
-							<div class="product-body">
-								<p class="product-category">Category</p>
-								<h3 class="product-name">
-									<a href="#">product name goes here</a>
-								</h3>
-								<h4 class="product-price">
-									$980.00
-									<del class="product-old-price">$990.00</del>
-								</h4>
-							</div>
-						</div>
-						<!-- product widget -->
-					</div>
-				</div>
-			</div>
-
-		</div>
-		<!-- /row -->
-	</div>
-	<!-- /container -->
-</div>
-<!-- /SECTION -->
+		advance();
+	});
+</script> </content>

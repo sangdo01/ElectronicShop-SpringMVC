@@ -11,7 +11,7 @@ import ElectronicShop.Dto.ProductsDto;
 
 @Repository
 public class CartDao extends BaseDao {
-
+	
 	@Autowired
 	ProductsDao productsDao = new ProductsDao();
 
@@ -20,6 +20,7 @@ public class CartDao extends BaseDao {
 		ProductsDto product = productsDao.findProductByID(id);
 		if (product != null && cart.containsKey(id)) {
 			itemCart = cart.get(id);
+			//xu ly con chua dung lam ;)) fix sau
 			itemCart.setQuanty(itemCart.getQuanty() + 1);
 			itemCart.setTotalPrice(itemCart.getQuanty() * itemCart.getProduct().getPrice());
 			
@@ -57,6 +58,7 @@ public class CartDao extends BaseDao {
 		return cart;
 	}
 
+	//tong so luong tat ca san pham cua gio hang
 	public int totalQuanty(HashMap<Integer, CartDto> cart) {
 		int totalQuanty = 0;
 		for (Map.Entry<Integer, CartDto> itemCart : cart.entrySet()) {
@@ -65,6 +67,7 @@ public class CartDao extends BaseDao {
 		return totalQuanty;
 	}
 
+	//tong gia tat ca san pham cua gio hang
 	public double totalPrice(HashMap<Integer, CartDto> cart) {
 		double totalPrice = 0;
 		for (Map.Entry<Integer, CartDto> itemCart : cart.entrySet()) {

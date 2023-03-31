@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@include file="/WEB-INF/views/layouts/user/taglib.jsp"%>
 <!-- HEADER -->
+
 <header>
 	<!-- TOP HEADER -->
 	<div id="top-header">
@@ -14,10 +15,41 @@
 						Minh</a></li>
 			</ul>
 			<ul class="header-links pull-right">
-				<li><a href="#"> <!-- <i class="fa fa-dollar"></i> -->₫ VNĐ
-				</a></li>
-				<li><a href="<c:url value="/dang-nhap" />"><i class="fa fa-user-o"></i> Đăng Nhập</a></li>
+				<%-- <li><a href="#"> ₫ VNĐ </a></li>
+				<li><a href="<c:url value="/dang-ky" />"><i
+						class="fa fa-user-o"></i> Đăng Ký</a></li> --%>
+				<!-- Dropdown List Login -->
+				<li>
+					<div>
+						<div class="dropdown-login">
+							<c:if test="${ not empty LoginInfo }">
+								<button class="dropbtn-login">
+									${ LoginInfo.display_name } <i class="fa fa-caret-down"></i>
+								</button>
+								<div class="dropdown-content">
+									<a href="<c:url value="/dang-xuat" />">Đăng xuất</a>
+								</div>
+
+							</c:if>
+							<c:if test="${ empty LoginInfo }">
+								<button class="dropbtn-login">
+									Tài khoản <i class="fa fa-caret-down"></i>
+								</button>
+								<div class="dropdown-content">
+									<a href="<c:url value="/dang-nhap" />">Đăng nhập</a> <a
+										href="<c:url value="/dang-ky" />">Đăng ký</a>
+								</div>
+
+							</c:if>
+
+						</div>
+					</div>
+				</li>
+
+
 			</ul>
+
+
 		</div>
 	</div>
 	<!-- /TOP HEADER -->
@@ -43,7 +75,7 @@
 					<div class="header-search">
 						<form>
 
-							<select class="input-select">
+							<%-- <select class="input-select">
 								<option value="0">Tất cả thể loại</option>
 								<c:forEach var="item" items="${ cateShare }">
 									<option value="1">${ item.name }</option>
@@ -51,7 +83,8 @@
 								<!-- <option value="0">All Categories</option>
 
 								<option value="1">Category 02</option> -->
-							</select> <input class="input" placeholder="Tìm kiếm tại đây">
+							</select> --%>
+							<input class="input" placeholder="Tìm kiếm tại đây">
 							<button class="search-btn">Tìm kiếm</button>
 						</form>
 					</div>
@@ -62,17 +95,19 @@
 				<div class="col-md-3 clearfix">
 					<div class="header-ctn">
 						<!-- Wishlist -->
-						<div>
+						<!-- <div>
 							<a href="#"> <i class="fa fa-heart-o"></i> <span> Danh
 									sách yêu thích</span>
 								<div class="qty">2</div>
 							</a>
-						</div>
+						</div> -->
+						<!-- Dropdown List Login -->
+
 						<!-- /Wishlist -->
 
 						<!-- Cart -->
 						<div class="dropdown">
-							<a class="dropdown-toggle" data-toggle="dropdown"
+							<a href="" class="dropdown-toggle" data-toggle="dropdown"
 								aria-expanded="true"> <i class="fa fa-shopping-cart"></i> <span>Giỏ
 									hàng</span>
 								<div class="qty">${ TotalQuantyCart }</div>
@@ -117,7 +152,8 @@
 								</div>
 								<div class="cart-btns">
 									<a href="<c:url value="/gio-hang" />">Xem giỏ hàng</a> <a
-										href="#">Checkout <i class="fa fa-arrow-circle-right"></i></a>
+										href="<c:url value="/checkout" />">Checkout <i
+										class="fa fa-arrow-circle-right"></i></a>
 								</div>
 							</div>
 						</div>
@@ -160,13 +196,6 @@
 					</li>
 
 				</c:forEach>
-				<!-- <li class="active"><a href="#">Home</a></li>
-				<li><a href="#">Hot Deals</a></li>
-				<li><a href="#">Categories</a></li>
-				<li><a href="#">Laptops</a></li>
-				<li><a href="#">Smartphones</a></li>
-				<li><a href="#">Cameras</a></li>
-				<li><a href="#">Accessories</a></li> -->
 			</ul>
 			<!-- /NAV -->
 		</div>

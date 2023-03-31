@@ -101,9 +101,9 @@
 								<fmt:formatNumber type="number" groupingUsed="true"
 									value="${ product.price }" />
 								₫
-								<del class="product-old-price">$990.00</del>
+								<!-- <del class="product-old-price">$990.00</del> -->
 							</h3>
-							<span class="product-available">In Stock</span>
+							<!-- <span class="product-available">In Stock</span> -->
 						</div>
 						<p>${ product.title }</p>
 
@@ -125,7 +125,7 @@
 										class="qty-up">+</span> <span class="qty-down">-</span>
 								</div>
 							</div>
-							<button class="add-to-cart-btn">
+							<button type="submit" class="add-to-cart-btn">
 								<i class="fa fa-shopping-cart"></i> Thêm vào giỏ hàng
 							</button>
 						</div>
@@ -138,7 +138,7 @@
 						</ul> -->
 
 						<ul class="product-links">
-							<li>Category:</li>
+							<li>Loại sản phẩm:</li>
 							<li><a href="#">Headphones</a></li>
 							<li><a href="#">Accessories</a></li>
 						</ul>
@@ -154,9 +154,9 @@
 				<div id="product-tab">
 					<!-- product tab nav -->
 					<ul class="tab-nav">
-						<li class="active"><a data-toggle="tab" href="#tab1">Chi
-								tiết sản phẩm</a></li>
-						<li><a data-toggle="tab" href="#tab2">Details</a></li>
+						<li class="active"><a data-toggle="tab" href="#tab1">Xem
+								sản phẩm</a></li>
+						<li><a data-toggle="tab" href="#tab2">Mô tả</a></li>
 						<!-- <li><a data-toggle="tab" href="#tab3">Reviews (3)</a></li> -->
 					</ul>
 					<!-- /product tab nav -->
@@ -259,24 +259,26 @@
 							</h4>
 							<div class="product-rating"></div>
 							<div class="product-btns">
-								<button class="add-to-wishlist">
+								<!-- <button class="add-to-wishlist">
 									<i class="fa fa-heart-o"></i><span class="tooltipp">add
 										to wishlist</span>
 								</button>
 								<button class="add-to-compare">
 									<i class="fa fa-exchange"></i><span class="tooltipp">add
 										to compare</span>
-								</button>
-								<button class="quick-view">
-									<i class="fa fa-eye"></i><span class="tooltipp">quick
-										view</span>
-								</button>
+								</button> -->
+								<a
+									href="<c:url value="/chi-tiet-san-pham/${item.id_product }" />"
+									class="quick-view"> <i class="fa fa-eye"></i><span
+									class="tooltipp">Chi tiết</span>
+								</a>
 							</div>
 						</div>
 						<div class="add-to-cart">
-							<button class="add-to-cart-btn">
-								<i class="fa fa-shopping-cart"></i> add to cart
-							</button>
+							<a href="<c:url value="/add-cart/${ item.id_product }" />"
+								class="add-to-cart-btn"> <i class="fa fa-shopping-cart"></i>Thêm
+								giỏ hàng
+							</a>
 						</div>
 					</div>
 				</div>
