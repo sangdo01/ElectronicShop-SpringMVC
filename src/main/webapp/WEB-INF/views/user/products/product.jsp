@@ -13,8 +13,8 @@
 		<div class="row">
 			<div class="col-md-12">
 				<ul class="breadcrumb-tree">
-					<li><a href="#">Trang chủ</a></li>
-					<li><a href="#">Sản phẩm</a></li>
+					<li><a href="<c:url value="/trang-chu" />">Trang chủ</a></li>
+					<li><a href="<c:url value="/san-pham" />">Sản phẩm</a></li>
 					<!-- <li><a href="#">Accessories</a></li>
 					<li><a href="#">Headphones</a></li> -->
 					<li class="active">Chi tiết sản phẩm</li>
@@ -108,10 +108,10 @@
 						<p>${ product.title }</p>
 
 						<div class="product-options">
-							<label> Size <select class="input-select">
+							<!-- <label> Size <select class="input-select">
 									<option value="0">X</option>
-							</select>
-							</label> <label> Color <select class="input-select">
+							</select> -->
+							</label> <label> Màu <select class="input-select">
 									<option value="0">Red</option>
 							</select>
 							</label>
@@ -119,7 +119,7 @@
 
 						<div class="add-to-cart">
 							<div class="qty-label">
-								Qty
+								Số lượng
 								<div class="input-number">
 									<input type="number" min="0" value="0"> <span
 										class="qty-up">+</span> <span class="qty-down">-</span>
@@ -154,8 +154,8 @@
 				<div id="product-tab">
 					<!-- product tab nav -->
 					<ul class="tab-nav">
-						<li class="active"><a data-toggle="tab" href="#tab1">Xem
-								sản phẩm</a></li>
+						<li class="active"><a data-toggle="tab" href="#tab1">Thông
+								tin sản phẩm</a></li>
 						<li><a data-toggle="tab" href="#tab2">Mô tả</a></li>
 						<!-- <li><a data-toggle="tab" href="#tab3">Reviews (3)</a></li> -->
 					</ul>
@@ -243,7 +243,7 @@
 								src="<c:url value="/assets/user/img/product/${ item.img }" />"
 								alt="">
 							<div class="product-label">
-								<span class="sale">-30%</span>
+								<span class="new">Mới</span>
 							</div>
 						</div>
 						<div class="product-body">
@@ -255,18 +255,9 @@
 								<fmt:formatNumber type="number" groupingUsed="true"
 									value="${ product.price }" />
 								₫
-								<del class="product-old-price">$990.00</del>
 							</h4>
 							<div class="product-rating"></div>
 							<div class="product-btns">
-								<!-- <button class="add-to-wishlist">
-									<i class="fa fa-heart-o"></i><span class="tooltipp">add
-										to wishlist</span>
-								</button>
-								<button class="add-to-compare">
-									<i class="fa fa-exchange"></i><span class="tooltipp">add
-										to compare</span>
-								</button> -->
 								<a
 									href="<c:url value="/chi-tiet-san-pham/${item.id_product }" />"
 									class="quick-view"> <i class="fa fa-eye"></i><span

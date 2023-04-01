@@ -15,10 +15,6 @@
 						Minh</a></li>
 			</ul>
 			<ul class="header-links pull-right">
-				<%-- <li><a href="#"> ₫ VNĐ </a></li>
-				<li><a href="<c:url value="/dang-ky" />"><i
-						class="fa fa-user-o"></i> Đăng Ký</a></li> --%>
-				<!-- Dropdown List Login -->
 				<li>
 					<div>
 						<div class="dropdown-login">
@@ -63,7 +59,7 @@
 				<!-- LOGO -->
 				<div class="col-md-3">
 					<div class="header-logo">
-						<a href="#" class="logo"> <img
+						<a href="<c:url value="/trang-chu" />" class="logo"> <img
 							src="<c:url value="/assets/user/img/logo.png" />" alt="">
 						</a>
 					</div>
@@ -94,17 +90,6 @@
 				<!-- ACCOUNT -->
 				<div class="col-md-3 clearfix">
 					<div class="header-ctn">
-						<!-- Wishlist -->
-						<!-- <div>
-							<a href="#"> <i class="fa fa-heart-o"></i> <span> Danh
-									sách yêu thích</span>
-								<div class="qty">2</div>
-							</a>
-						</div> -->
-						<!-- Dropdown List Login -->
-
-						<!-- /Wishlist -->
-
 						<!-- Cart -->
 						<div class="dropdown">
 							<a href="" class="dropdown-toggle" data-toggle="dropdown"
@@ -152,7 +137,7 @@
 								</div>
 								<div class="cart-btns">
 									<a href="<c:url value="/gio-hang" />">Xem giỏ hàng</a> <a
-										href="<c:url value="/checkout" />">Checkout <i
+										href="<c:url value="/checkout" />">Thanh toán <i
 										class="fa fa-arrow-circle-right"></i></a>
 								</div>
 							</div>
@@ -192,7 +177,7 @@
 					<c:if test="${ not index.first}">
 						<li>
 					</c:if>
-					<a href="#">${ item.name }</a>
+					<a href='<c:url value="/${ item.url }"/>'>${ item.name }</a>
 					</li>
 
 				</c:forEach>

@@ -49,7 +49,7 @@ public class CategoryController extends BaseController {
 		_mvShare.addObject("idCategory", id);
 		_mvShare.addObject("paginateInfo", paginateInfo);
 		_mvShare.addObject("productsPaginate", categoryService.getDataProductsPaginate(Integer.parseInt(id),
-				paginateInfo.getStart(),totalProductsPage));
+				paginateInfo.getStart(), totalProductsPage));
 		return _mvShare;
 	}
 

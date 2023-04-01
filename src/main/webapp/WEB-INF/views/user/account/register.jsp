@@ -12,7 +12,7 @@
 		<div class="row">
 			<div class="col-md-12">
 				<ul class="breadcrumb-tree">
-					<li><a href="#">Trang chủ</a></li>
+					<li><a href="<c:url value="/trang-chu" />">Trang chủ</a></li>
 					<li class="active">Đăng ký</li>
 				</ul>
 			</div>
