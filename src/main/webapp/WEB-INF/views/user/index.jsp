@@ -2,8 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@include file="/WEB-INF/views/layouts/user/taglib.jsp"%>
 <title>Trang chủ</title>
-<style>
-</style>
 <!-- SECTION -->
 <div class="section">
 	<!-- container -->
