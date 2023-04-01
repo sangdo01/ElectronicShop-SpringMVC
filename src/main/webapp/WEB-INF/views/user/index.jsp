@@ -2,8 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@include file="/WEB-INF/views/layouts/user/taglib.jsp"%>
 <title>Trang chủ</title>
-<style>
-</style>
 <!-- SECTION -->
 <div class="section">
 	<!-- container -->
@@ -80,22 +78,19 @@
 					<h3 class="title">Sản Phẩm Mới</h3>
 					<div class="section-nav">
 						<ul class="section-tab-nav tab-nav">
-							<c:forEach var="item" items="${ categories }" varStatus="index">
+							<%-- <c:forEach var="item" items="${ categories }" varStatus="index">
 								<c:if test="${index.first}">
 									<li class="active">
 								</c:if>
 								<c:if test="${ not index.first}">
 									<li>
 								</c:if>
-								<%-- <a data-toggle="tab" href="<c:url value="/san-pham" />">${ item.name }</a> --%>
+								<a data-toggle="tab" href="<c:url value="/san-pham" />">${ item.name }</a>
 								<a href="<c:url value="/san-pham" />">${ item.name }</a>
 								</li>
 
-							</c:forEach>
-							<!-- <li class="active"><a data-toggle="tab" href="#tab1">Laptops</a></li>
-							<li><a data-toggle="tab" href="#tab1">Smartphones</a></li>
-							<li><a data-toggle="tab" href="#tab1">Cameras</a></li>
-							<li><a data-toggle="tab" href="#tab1">Accessories</a></li> -->
+							</c:forEach> --%>
+							<li class="active"><a href='<c:url value="/san-pham"/>'>Xem tất cả</a></li>
 						</ul>
 					</div>
 				</div>
@@ -118,7 +113,7 @@
 													src="<c:url value="/assets/user/img/product/${ item.img }" />"
 													alt="">
 												<div class="product-label">
-													<span class="sale">-30%</span> <span class="new">NEW</span>
+													<!-- <span class="sale">-30%</span>  --><span class="new">Mới</span>
 												</div>
 											</div>
 											<div class="product-body">
@@ -130,23 +125,13 @@
 													<fmt:formatNumber type="number" groupingUsed="true"
 														value="${ item.price }" />
 													₫
-
-													<del class="product-old-price">$980.00</del>
 												</h4>
 												<div class="product-rating">
 													<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
 														class="fa fa-star"></i> <i class="fa fa-star"></i> <i
 														class="fa fa-star"></i>
 												</div>
-												<div class="product-btns">
-													<!-- <button class="add-to-wishlist">
-														<i class="fa fa-heart-o"></i><span class="tooltipp">add
-															to wishlist</span>
-													</button>
-													<button class="add-to-compare">
-														<i class="fa fa-exchange"></i><span class="tooltipp">add
-															to compare</span>
-													</button> -->
+												<div class="product-btns">										
 													<a class="quick-view"
 														href="<c:url value="/chi-tiet-san-pham/${item.id_product }" />">
 														<i class="fa fa-eye"></i><span class="tooltipp">
@@ -197,25 +182,25 @@
 						<li>
 							<div>
 								<h3>02</h3>
-								<span>Days</span>
+								<span>Ngày</span>
 							</div>
 						</li>
 						<li>
 							<div>
 								<h3>10</h3>
-								<span>Hours</span>
+								<span>Giờ</span>
 							</div>
 						</li>
 						<li>
 							<div>
 								<h3>34</h3>
-								<span>Mins</span>
+								<span>Phút</span>
 							</div>
 						</li>
 						<li>
 							<div>
 								<h3>60</h3>
-								<span>Secs</span>
+								<span>Giây</span>
 							</div>
 						</li>
 					</ul>
@@ -242,21 +227,7 @@
 					<h3 class="title">Sản Phẩm Nổi Bật</h3>
 					<div class="section-nav">
 						<ul class="section-tab-nav tab-nav">
-							<c:forEach var="item" items="${ categories }" varStatus="index">
-								<c:if test="${index.first}">
-									<li class="active">
-								</c:if>
-								<c:if test="${ not index.first}">
-									<li>
-								</c:if>
-								<a data-toggle="tab" href="/sanpham/${ item.id }">${ item.name }</a>
-								</li>
-
-							</c:forEach>
-							<!-- <li class="active"><a data-toggle="tab" href="#tab1">Laptops</a></li>
-							<li><a data-toggle="tab" href="#tab1">Smartphones</a></li>
-							<li><a data-toggle="tab" href="#tab1">Cameras</a></li>
-							<li><a data-toggle="tab" href="#tab1">Accessories</a></li> -->
+							<li class="active"><a href='<c:url value="/san-pham"/>'>Xem tất cả</a></li>
 						</ul>
 					</div>
 				</div>
@@ -279,7 +250,7 @@
 													src="<c:url value="/assets/user/img/product/${ item.img }" />"
 													alt="">
 												<div class="product-label">
-													<span class="sale">-30%</span> <span class="new">NEW</span>
+													<!-- <span class="sale">-30%</span>  --><span class="new">Mới</span>
 												</div>
 											</div>
 											<div class="product-body">
@@ -291,8 +262,6 @@
 													<fmt:formatNumber type="number" groupingUsed="true"
 														value="${ item.price }" />
 													₫
-
-													<del class="product-old-price">$980.00</del>
 												</h4>
 												<div class="product-rating">
 													<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
@@ -300,25 +269,17 @@
 														class="fa fa-star"></i>
 												</div>
 												<div class="product-btns">
-													<button class="add-to-wishlist">
-														<i class="fa fa-heart-o"></i><span class="tooltipp">add
-															to wishlist</span>
-													</button>
-													<button class="add-to-compare">
-														<i class="fa fa-exchange"></i><span class="tooltipp">add
-															to compare</span>
-													</button>
 													<a class="quick-view"
 														href="chi-tiet-san-pham/${ item.id_product }"> <i
 														class="fa fa-eye"></i><span class="tooltipp">Xem
-															chi tiết</span>
+															sản phẩm</span>
 													</a>
 												</div>
 											</div>
 											<div class="add-to-cart">
 												<a href="<c:url value="/add-cart/${ item.id_product }" />"
 													class="add-to-cart-btn"> <i class="fa fa-shopping-cart"></i>
-													Add to cart
+													Thêm giỏ hàng
 												</a>
 											</div>
 										</div>

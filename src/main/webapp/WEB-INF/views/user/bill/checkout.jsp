@@ -12,8 +12,8 @@
 		<div class="row">
 			<div class="col-md-12">
 				<ul class="breadcrumb-tree">
-					<li><a href="#">Trang chủ</a></li>
-					<li class="active">Checkout</li>
+					<li><a href='<c:url value="/trang-chu"/>'>Trang chủ</a></li>
+					<li class="active">Trang thanh toán</li>
 				</ul>
 			</div>
 		</div>
@@ -59,27 +59,21 @@
 							<form:textarea path="note" rows="5" cols="30" class="input"
 								placeholder="Ghi chú" />
 						</div>
-						<!-- /Order notes -->
-						<!-- <a href="#" class="primary-btn order-submit"
-							style="margin-top: 40px; margin-bottom: 20px">Đặt hàng</a> -->
+						<div class="form-group">
+							<div class="input-checkbox">
+								<!-- <input type="checkbox" id="create-account"> <label
+								for="create-account"> <span></span> Đăng ký tài khoản?
+							</label> -->
+								<a href="<c:url value="dang-ky" />"><span>Đăng ký tài
+										khoản?</span> </a>
+							</div>
+						</div>
 						<button type="submit" class="primary-btn order-submit"
 							style="margin-top: 40px; margin-bottom: 20px">Đặt hàng</button>
 
 					</form:form>
 
-					<div class="form-group">
-						<div class="input-checkbox">
-							<input type="checkbox" id="create-account"> <label
-								for="create-account"> <span></span> Create Account?
-							</label>
-							<div class="caption">
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-									sed do eiusmod tempor incididunt.</p>
-								<input class="input" type="password" name="password"
-									placeholder="Enter Your Password">
-							</div>
-						</div>
-					</div>
+
 				</div>
 				<!-- /Billing Details -->
 
@@ -89,15 +83,15 @@
 			<!-- Order Details -->
 			<div class="col-md-5 order-details">
 				<div class="section-title text-center">
-					<h3 class="title">Your Order</h3>
+					<h3 class="title">Hóa đơn của bạn</h3>
 				</div>
 				<div class="order-summary">
 					<div class="order-col">
 						<div>
-							<strong>PRODUCT</strong>
+							<strong>Sản phẩm</strong>
 						</div>
 						<div>
-							<strong>TOTAL</strong>
+							<strong>Thành tiền</strong>
 						</div>
 					</div>
 					<div class="order-products">
@@ -111,14 +105,14 @@
 						</div>
 					</div>
 					<div class="order-col">
-						<div>Shiping</div>
+						<div>Giao hàng</div>
 						<div>
-							<strong>FREE</strong>
+							<strong>Miễn phí</strong>
 						</div>
 					</div>
 					<div class="order-col">
 						<div>
-							<strong>TOTAL</strong>
+							<strong>Tổng tiền</strong>
 						</div>
 						<div>
 							<strong class="order-total">$2940.00</strong>
@@ -128,7 +122,7 @@
 				<div class="payment-method">
 					<div class="input-radio">
 						<input type="radio" name="payment" id="payment-1"> <label
-							for="payment-1"> <span></span> Direct Bank Transfer
+							for="payment-1"> <span></span> Thanh toán online
 						</label>
 						<div class="caption">
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
@@ -138,7 +132,7 @@
 					</div>
 					<div class="input-radio">
 						<input type="radio" name="payment" id="payment-2"> <label
-							for="payment-2"> <span></span> Cheque Payment
+							for="payment-2"> <span></span>Thanh toán bằng Payment
 						</label>
 						<div class="caption">
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
@@ -148,7 +142,7 @@
 					</div>
 					<div class="input-radio">
 						<input type="radio" name="payment" id="payment-3"> <label
-							for="payment-3"> <span></span> Paypal System
+							for="payment-3"> <span></span> Thanh toán khi nhận hàng
 						</label>
 						<div class="caption">
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
@@ -157,13 +151,8 @@
 						</div>
 					</div>
 				</div>
-				<div class="input-checkbox">
-					<input type="checkbox" id="terms"> <label for="terms">
-						<span></span> I've read and accept the <a href="#">terms &
-							conditions</a>
-					</label>
-				</div>
-				<a href="#" class="primary-btn order-submit">Place order</a>
+				<a href="<c:url value="gio-hang" />"
+					class="primary-btn order-submit">Xem giỏ hàng</a>
 			</div>
 			<!-- /Order Details -->
 		</div>

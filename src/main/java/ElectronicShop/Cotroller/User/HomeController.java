@@ -16,4 +16,15 @@ public class HomeController extends BaseController {
 		return _mvShare;
 	}
 
+	@RequestMapping(value = "/about")
+	public ModelAndView AboutUs() {
+		_mvShare.setViewName("user/about/about_us");
+		return _mvShare;
+	}
+
+	@RequestMapping(value = "/lien-he")
+	public ModelAndView Contact() {
+		_mvShare.setViewName("user/about/contact");
+		return _mvShare;
+	}
 }
