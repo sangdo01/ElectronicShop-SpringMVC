@@ -7,6 +7,15 @@ public class Users {
 	private String password;
 	private String display_name;
 	private String address;
+	private int id_role;
+
+	public int getId_role() {
+		return id_role;
+	}
+
+	public void setId_role(int id_role) {
+		this.id_role = id_role;
+	}
 
 	public Users() {
 

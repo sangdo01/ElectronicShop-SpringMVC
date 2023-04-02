@@ -1,5 +1,7 @@
 package ElectronicShop.Service.User;
 
+import java.util.List;
+
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,6 +34,22 @@ public class AccountServiceImpl implements IAccountService {
 			}
 		}
 		return null;
+	}
+
+	@Override
+	public int addAccountUser(Users user) {
+		user.setPassword(BCrypt.hashpw(user.getPassword(), BCrypt.gensalt(12)));
+		return usersDao.addAccountUser(user);
+	}
+
+	@Override
+	public List<Users> getAllUser() {
+		return usersDao.getAllUser();
+	}
+
+	@Override
+	public int deleteUserByID(int id) {
+		return usersDao.deleteUsrByID(id);
 	}
 
 }
