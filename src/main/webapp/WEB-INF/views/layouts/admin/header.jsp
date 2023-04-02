@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@include file="/WEB-INF/views/layouts/user/taglib.jsp"%>
+<%@include file="/WEB-INF/views/layouts/admin/taglib.jsp"%>
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
 	<!-- Navbar Brand-->
 	<a class="navbar-brand ps-3" href="index.html">Electronic Shop</a>

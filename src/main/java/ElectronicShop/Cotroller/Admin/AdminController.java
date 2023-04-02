@@ -5,12 +5,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class AdminController {
+public class AdminController extends BaseAdminController{
 
-	@RequestMapping(value = {"/admin/index", "/admin"})
+	@RequestMapping(value = {"/admin/index", "/admin", "/admin/trang-chu"})
 	public ModelAndView Dashboard() {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("admin/index");
-		return mv;
+		_mvShare.setViewName("admin/index");
+		return _mvShare;
 	}
 }

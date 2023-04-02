@@ -31,6 +31,8 @@ public class UserController extends BaseController {
 		int count = accountService.addAccount(user);
 		if (count > 0) {
 			_mvShare.addObject("status", "Đăng ký tài khoản thành công!");
+			_mvShare.setViewName("redirect:trang-chu");
+			return _mvShare;
 		} else {
 			_mvShare.addObject("status", "Đăng ký tài khoản thất bại!");
 		}

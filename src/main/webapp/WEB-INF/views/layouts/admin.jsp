@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://www.opensymphony.com/sitemesh/decorator"
 	prefix="decorator"%>
-<%@include file="/WEB-INF/views/layouts/user/taglib.jsp"%>
+<%@include file="/WEB-INF/views/layouts/admin/taglib.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,11 +33,11 @@
 		<%@include file="/WEB-INF/views/layouts/admin/sidenav.jsp"%>
 		<!-- End sidenav -->
 		<div id="layoutSidenav_content">
-			<main>
-				<!-- Start Body -->
-				<decorator:body />
-				<!-- End Body -->
-			</main>
+
+			<!-- Start Body -->
+			<decorator:body />
+			<!-- End Body -->
+
 			<!-- Start footer -->
 			<%@include file="/WEB-INF/views/layouts/admin/footer.jsp"%>
 			<!-- End footer -->
