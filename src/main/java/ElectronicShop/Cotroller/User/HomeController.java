@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import ElectronicShop.Service.User.ContactServiceImpl;
 import ElectronicShop.Entity.Contact;
 import ElectronicShop.Entity.Users;
+import ElectronicShop.Service.User.ContactServiceImpl;
 @Controller
 public class HomeController extends BaseController {
 
