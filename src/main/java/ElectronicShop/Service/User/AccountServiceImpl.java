@@ -52,4 +52,13 @@ public class AccountServiceImpl implements IAccountService {
 		return usersDao.deleteUsrByID(id);
 	}
 
+	@Override
+	public Users checkExitsUser(Users user) {
+		user = usersDao.getUserByAccount(user);
+		if (user != null) {
+			return user;
+		}
+		return null;
+	}
+
 }

@@ -27,13 +27,14 @@
 <div class="section">
 	<!-- container -->
 	<div class="container">
+		<h1>${ status }</h1>
 		<!-- row -->
 		<div class="row">
 			<form:form action="dang-ky" method="POST" modelAttribute="user">
 				<div class="form-group">
 					<label for="exampleInputEmail1">Email</label>
 					<form:input type="email" class="form-control"
-						placeholder="Nhập email" path="user"/>
+						placeholder="Nhập email" path="user" />
 					<!-- <small
 						id="emailHelp" class="form-text text-muted">We'll never
 						share your email with anyone else.</small> -->
@@ -42,13 +43,13 @@
 				<div class="form-group">
 					<label for="exampleInputPassword1">Mật khẩu</label>
 					<form:input type="password" class="form-control"
-						placeholder="Nhập mật khẩu" path="password"/>
+						placeholder="Nhập mật khẩu" path="password" />
 					<div class="invalid-feedback">Please provide a valid city.</div>
 				</div>
 				<div class="form-group">
 					<label for="exampleInputEmail1">Họ và tên</label>
 					<form:input type="text" class="form-control"
-						placeholder="Nhập họ và tên" path="display_name"/>
+						placeholder="Nhập họ và tên" path="display_name" />
 				</div>
 				<div class="form-group">
 					<label for="exampleInputEmail1">Địa chỉ</label>

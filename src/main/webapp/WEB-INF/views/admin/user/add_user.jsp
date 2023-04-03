@@ -41,7 +41,7 @@
 						placeholder="Nhập địa chỉ" path="address" />
 				</div>
 
-				<button type="submit" class="btn btn-primary">Thêm</button>
+				<button type="submit" class="btn btn-primary" style="margin-top: 20px">Thêm</button>
 			</form:form>
 
 		</div>

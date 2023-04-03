@@ -28,6 +28,7 @@ public class UserController extends BaseController {
 
 	@RequestMapping(value = { "/dang-ky" }, method = RequestMethod.POST)
 	public ModelAndView CreateAccount(@ModelAttribute("user") Users user) {
+
 		int count = accountService.addAccount(user);
 		if (count > 0) {
 			_mvShare.addObject("status", "Đăng ký tài khoản thành công!");
@@ -50,7 +51,7 @@ public class UserController extends BaseController {
 	@RequestMapping(value = "/dang-nhap", method = RequestMethod.POST)
 	public ModelAndView LoginAccount(HttpSession session, @ModelAttribute("userLoginModel") Users user) {
 		user = accountService.checkAccount(user);
-		if (user != null) {
+		if (user != null && user.getId_role() == 2) {
 			_mvShare.setViewName("redirect:trang-chu");
 			session.setAttribute("LoginInfo", user);
 			return _mvShare;
@@ -64,8 +65,7 @@ public class UserController extends BaseController {
 	@RequestMapping(value = "/dang-xuat", method = RequestMethod.GET)
 	public String Logout(HttpSession session, HttpServletRequest request) {
 		session.removeAttribute("LoginInfo");
-		return "redirect:"+request.getHeader("Referer");
+		return "redirect:" + request.getHeader("Referer");
 	}
-	
-	
+
 }
