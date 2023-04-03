@@ -15,7 +15,7 @@
 
 
 			<a href="<c:url value="/admin/add-user"/>"
-				class="btn btn-primary btn-lg" href="#" role="button">Thêm người
+				class="btn btn-primary btn-lg" href="#" role="button" style="margin-bottom: 20px">Thêm người
 				dùng</a>
 			<div class="card mb-4">
 				<div class="card-header">
