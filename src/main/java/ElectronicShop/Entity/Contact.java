@@ -8,16 +8,9 @@ public class Contact {
 	private String content;
 
 	public Contact() {
-		super();
+		
 	}
 
-	public Contact(int id, String email, String name, String content) {
-		super();
-		this.id = id;
-		this.email = email;
-		this.name = name;
-		this.content = content;
-	}
 
 	public int getId() {
 		return id;
