@@ -29,23 +29,26 @@
 									<h3 class="text-center font-weight-light my-4">Đăng nhập</h3>
 								</div>
 								<div class="card-body">
-									<form>
+									<h1>${ statusLogin }</h1>
+									<form:form action="admin-login" method="POST"
+										modelAttribute="UserModel">
 										<div class="form-floating mb-3">
-											<input class="form-control" id="inputEmail" type="email"
-												placeholder="name@example.com" /> <label for="inputEmail">Tài
-												khoản</label>
+											<form:input type="email" class="form-control" id="inputEmail"
+												placeholder="Nhập tài khoản" path="user" />
+											<label for="inputEmail">Tài khoản</label>
 										</div>
 										<div class="form-floating mb-3">
-											<input class="form-control" id="inputPassword"
-												type="password" placeholder="Password" /> <label
-												for="inputPassword">Mật khẩu</label>
+											<form:input type="password" class="form-control"
+												id="inputPassword" placeholder="Mật khẩu" path="password" />
+											<label for="inputPassword">Mật khẩu</label>
 										</div>
 
 										<div
 											class="d-flex align-items-center justify-content-between mt-4 mb-0">
-											<button type="submit" class="btn btn-primary" href="index.html">Đăng nhập</button>
+											<button type="submit" class="btn btn-primary">Đăng
+												nhập</button>
 										</div>
-									</form>
+									</form:form>
 								</div>
 								<div class="card-footer text-center py-3">
 									<div class="small">

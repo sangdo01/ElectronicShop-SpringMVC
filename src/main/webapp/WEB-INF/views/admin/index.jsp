@@ -3,7 +3,7 @@
 <%@include file="/WEB-INF/views/layouts/admin/taglib.jsp"%>
 <head>
 <meta charset="UTF-8">
-<title>Dashboard</title>
+<title>Admin | Quản trị</title>
 </head>
 <div class="container-fluid px-4">
 	<h1 class="mt-4">Quản lý</h1>

@@ -23,7 +23,28 @@ public class AuthController extends BaseAdminController {
 	@RequestMapping(value = { "/admin-login" }, method = RequestMethod.GET)
 	public ModelAndView Login() {
 		_mvShare.setViewName("layouts/login_admin");
+		_mvShare.addObject("UserModel", new Users());
 		return _mvShare;
+	}
+
+	@RequestMapping(value = "/admin-login", method = RequestMethod.POST)
+	public ModelAndView LoginAccount(HttpSession session, @ModelAttribute("UserModel") Users user) {
+		user = accountService.checkAccount(user);
+		if (user != null && user.getId_role() == 1) {
+			_mvShare.setViewName("redirect:admin/index");
+			session.setAttribute("InfoAdmin", user);
+			return _mvShare;
+		} else {
+			_mvShare.addObject("statusLogin", "Đăng nhập thất bại!");
+		}
+		_mvShare.setViewName("layouts/login_admin");
+		return _mvShare;
+	}
+	
+	@RequestMapping(value = "/admin/dang-xuat", method = RequestMethod.GET)
+	public String Logout(HttpSession session, HttpServletRequest request) {
+		session.removeAttribute("InfoAdmin");
+		return "redirect:/";
 	}
 
 	@RequestMapping(value = { "/admin/list-user" }, method = RequestMethod.GET)

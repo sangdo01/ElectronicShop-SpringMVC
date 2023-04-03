@@ -63,6 +63,7 @@ input[type=submit]:hover {
 		<!-- row -->
 		<div class="row">
 			<h3>Thông tin liên hệ</h3>
+			<h1>${ status }</h1>
 
 			<div class="container-contact">
 				<form:form action="lien-he" method="POST"

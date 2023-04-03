@@ -1,5 +1,7 @@
 package ElectronicShop.Cotroller.User;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -31,9 +33,15 @@ public class HomeController extends BaseController {
 	}
 
 	@RequestMapping(value = "/lien-he", method = RequestMethod.GET)
-	public ModelAndView Contact() {
+	public ModelAndView Contact( HttpSession session) {
 		_mvShare.setViewName("user/about/contact");
-		_mvShare.addObject("ContactModel", new Contact());
+		Users loginInfo = (Users) session.getAttribute("LoginInfo");
+		Contact contact = new Contact();
+		if (loginInfo != null) {
+			contact.setEmail(loginInfo.getUser());
+			contact.setName(loginInfo.getDisplay_name());
+		}
+		_mvShare.addObject("ContactModel", contact);
 		return _mvShare;
 	}
 	

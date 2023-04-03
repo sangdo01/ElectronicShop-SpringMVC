@@ -18,4 +18,6 @@ public interface IAccountService {
 	public List<Users> getAllUser();
 	
 	public int deleteUserByID(int id);
+	
+	public Users checkExitsUser(Users user);
 }
