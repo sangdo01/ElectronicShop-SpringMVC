@@ -55,10 +55,10 @@
 					<div class="sb-nav-link-icon">
 						<i class="fas fa-chart-area"></i>
 					</div> Nguời dùng
-				</a> <a class="nav-link" href="charts.html">
+				</a> <a class="nav-link" href="<c:url value="/admin/list-bills"/>">
 					<div class="sb-nav-link-icon">
 						<i class="fas fa-chart-area"></i>
-					</div> Hóa đơn
+					</div> Đơn đặt hàng
 				</a>
 			</div>
 		</div>
