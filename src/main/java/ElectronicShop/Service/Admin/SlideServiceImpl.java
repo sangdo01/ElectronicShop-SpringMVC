@@ -28,6 +28,25 @@ public class SlideServiceImpl implements ISlideService {
 		return slidesDao.addSlide(slides);
 	}
 
+	@Override
+	public int deleteSlideByID(int id) {
+		// TODO Auto-generated method stub
+		return slidesDao.deleteSlide(id);
+	}
+
+	@Override
+	public int updateSlideByID(Slides slides) {
+		// TODO Auto-generated method stub
+		return slidesDao.updateSlide(slides);
+	}
+
+	@Override
+	public Slides findSlideByID(int id) {
+		return slidesDao.getSlideByID(id);
+	}
+
+	
+
 
 
 }

@@ -46,10 +46,10 @@
 									<td><img class="mySlides"
 										style="width: 150px; height: 70px;" src='<c:url value="/assets/user/img/slide/${ item.img }" />'></td>
 									<td>${ item.content }</td>
-									<td><a href="#"
+									<td><a href="<c:url value="/admin/edit-slide/${ item.id }" />"
 										class="align-middle btn btn-outline-primary"><i
 											class="align-middle fas fa-edit"></i> </a> <a
-										href=""
+										href="<c:url value="/admin/delete-slide/${ item.id }" />"
 										class="align-middle handle_delete btn btn-outline-danger">
 											<i class="align-middle fas fa-user-times"></i>
 									</a></td>
