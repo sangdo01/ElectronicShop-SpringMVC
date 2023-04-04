@@ -50,45 +50,13 @@ public class SlideController extends BaseAdminController {
 
 	@RequestMapping(value = { "/admin/add-slide" }, method = RequestMethod.POST)
 	public String saveSlide(@ModelAttribute("slides") Slides slides,
-			@RequestParam(value = "image", required = false) MultipartFile photo) {
-		/*
-		 * _mvShare.setViewName("admin/slide/add_slide"); _mvShare.addObject("slide",
-		 * new Slides());
-		 */
-		slides.setImg(saveFile(photo));
+			@RequestParam(value = "image", required = false) CommonsMultipartFile photo, HttpSession session) {
+		String pathFoder = "slide"; 
+		slides.setImg(saveFile(photo, session, pathFoder));
 		slideService.addSlide(slides);
 
 		return "redirect:list-slide";
 	}
 
-	public String saveFile(MultipartFile file) {
-		if (null != file && !file.isEmpty()) {
-			try {
-				byte[] bytes = file.getBytes();
-				// Creating the directory to store file
-				String rootPath = System.getProperty("catalina.home");
-				File dir = new File(rootPath + File.separator + "assets/user/img");
-				if (!dir.exists()) {
-					dir.mkdirs();
-				}
-				// Create the file on server
-				String name = String.valueOf(new Date().getTime() + ".jpg");
-				/* String name = String.valueOf(file.getOriginalFilename()); */
-				File serverFile = new File(dir.getAbsolutePath() + File.separator + name);
-				System.out.print("=======================path of img on server: " + serverFile.getPath());
-				BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(serverFile));
-				stream.write(bytes);
-				stream.close();
-				return name;
-
-			} catch (IOException e) {
-				/* e.printStackTrace(); */
-				System.out.print("========Error upload file: " + e.getMessage());
-			}
-
-		} else {
-			System.out.print("========file not exits ");
-		}
-		return null;
-	}
+	
 }
