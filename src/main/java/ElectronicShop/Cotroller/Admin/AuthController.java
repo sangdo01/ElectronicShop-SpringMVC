@@ -80,9 +80,9 @@ public class AuthController extends BaseAdminController {
 		int check = accountService.deleteUserByID(id);
 
 		if (check > 0) {
-			_mvShare.addObject("statusDeleteUser", "Xóa thành công!");
+			_mvShare.addObject("statusDelete", "Xóa thành công!");
 		} else {
-			_mvShare.addObject("statusDeleteUser", "Xóa thất bại!");
+			_mvShare.addObject("statusDelete", "Xóa thất bại!");
 		}
 		_mvShare.setViewName("redirect:" + request.getHeader("Referer"));
 		return _mvShare;

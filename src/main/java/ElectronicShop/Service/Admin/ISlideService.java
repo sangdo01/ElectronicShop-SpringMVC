@@ -15,4 +15,10 @@ public interface ISlideService {
 
 	
 	public int addSlide(Slides slides);
+	
+	public int deleteSlideByID(int id);
+	
+	public int updateSlideByID(Slides slides);
+	
+	public Slides findSlideByID(int id);
 }
