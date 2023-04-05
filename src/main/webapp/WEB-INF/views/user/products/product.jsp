@@ -137,11 +137,11 @@
 									compare</a></li>
 						</ul> -->
 
-						<ul class="product-links">
+						<!-- <ul class="product-links">
 							<li>Loại sản phẩm:</li>
 							<li><a href="#">Headphones</a></li>
 							<li><a href="#">Accessories</a></li>
-						</ul>
+						</ul> -->
 					</form>
 
 

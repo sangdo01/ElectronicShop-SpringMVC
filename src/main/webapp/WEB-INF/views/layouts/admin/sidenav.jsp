@@ -43,10 +43,10 @@
 				<div class="collapse" id="collapseLayouts"
 					aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
 					<nav class="sb-sidenav-menu-nested nav">
-						<a class="nav-link" href="layout-static.html">Sản phẩm </a> <a
+						<a class="nav-link" href="<c:url value="/admin/list-product"/>">Sản phẩm </a> <a
 							class="nav-link" href="<c:url value="/admin/list-categories"/>">Loại sản
-							phẩm</a> <a class="nav-link" href="layout-sidenav-light.html">Màu
-							- Ảnh Sản phẩm</a>
+							phẩm</a> <%-- <a class="nav-link" href="<c:url value="/admin/list-color"/>">Màu
+							- Ảnh Sản phẩm</a> --%>
 
 					</nav>
 				</div>
