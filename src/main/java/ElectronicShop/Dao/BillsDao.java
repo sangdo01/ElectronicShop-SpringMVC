@@ -1,9 +1,15 @@
 package ElectronicShop.Dao;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Repository;
 
 import ElectronicShop.Entity.BillDetail;
 import ElectronicShop.Entity.Bills;
+import ElectronicShop.Entity.Categories;
+import ElectronicShop.Entity.MapperBills;
+import ElectronicShop.Entity.MapperCategories;
 
 @Repository
 public class BillsDao extends BaseDao {
@@ -60,4 +66,30 @@ public class BillsDao extends BaseDao {
 		int insert_billDetail = _jdbcTemplate.update(sql.toString());
 		return insert_billDetail;
 	}
+
+	public List<Bills> getAllBills() {
+		List<Bills> list = new ArrayList<Bills>();
+		String sql = "SELECT * FROM bills";
+		list = _jdbcTemplate.query(sql, new MapperBills());
+		return list;
+	}
+	
+	public int deleteBill(int id) {
+		String sql = "delete from bills where id = ?";
+		int result = _jdbcTemplate.update(sql, id);
+		return result;
+	}
+
+	/*
+	 * public int updateBill(Categories categories) { StringBuffer sql = new
+	 * StringBuffer(); sql.append("UPDATE bills "); sql.append("SET ");
+	 * sql.append("name = '" + categories.getName() + "', ");
+	 * sql.append("desciption = '" + categories.getDesciption() + "' ");
+	 * sql.append("WHERE id = '" + categories.getId() + "';"); int update =
+	 * _jdbcTemplate.update(sql.toString()); return update; }
+	 * 
+	 * public Categories getCategoryByID(int id) { String sql =
+	 * "SELECT * FROM categories WHERE id = " + id; Categories result =
+	 * _jdbcTemplate.queryForObject(sql, new MapperCategories()); return result; }
+	 */
 }

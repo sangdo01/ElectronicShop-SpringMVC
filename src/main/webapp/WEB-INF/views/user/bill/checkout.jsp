@@ -85,6 +85,7 @@
 				<div class="section-title text-center">
 					<h3 class="title">Hóa đơn của bạn</h3>
 				</div>
+
 				<div class="order-summary">
 					<div class="order-col">
 						<div>
@@ -94,16 +95,20 @@
 							<strong>Thành tiền</strong>
 						</div>
 					</div>
-					<div class="order-products">
-						<div class="order-col">
-							<div>1x Product Name Goes Here</div>
-							<div>$980.00</div>
+					<c:forEach var="item" items="${ Cart }">
+						<div class="order-products">
+							<div class="order-col">
+								<div>${ item.value.quanty }x${ item.value.product.name }</div>
+								<div>
+									<fmt:formatNumber type="number" groupingUsed="true"
+										value="${ item.value.totalPrice } " />
+									₫
+								</div>
+							</div>
 						</div>
-						<div class="order-col">
-							<div>2x Product Name Goes Here</div>
-							<div>$980.00</div>
-						</div>
-					</div>
+					</c:forEach>
+
+
 					<div class="order-col">
 						<div>Giao hàng</div>
 						<div>
@@ -115,39 +120,19 @@
 							<strong>Tổng tiền</strong>
 						</div>
 						<div>
-							<strong class="order-total">$2940.00</strong>
+							<strong class="order-total"><fmt:formatNumber
+									type="number" groupingUsed="true" value="${ TotalPriceCart }" />
+								₫</strong>
 						</div>
 					</div>
 				</div>
 				<div class="payment-method">
 					<div class="input-radio">
-						<input type="radio" name="payment" id="payment-1"> <label
-							for="payment-1"> <span></span> Thanh toán online
-						</label>
-						<div class="caption">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-								sed do eiusmod tempor incididunt ut labore et dolore magna
-								aliqua.</p>
-						</div>
-					</div>
-					<div class="input-radio">
-						<input type="radio" name="payment" id="payment-2"> <label
-							for="payment-2"> <span></span>Thanh toán bằng Payment
-						</label>
-						<div class="caption">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-								sed do eiusmod tempor incididunt ut labore et dolore magna
-								aliqua.</p>
-						</div>
-					</div>
-					<div class="input-radio">
 						<input type="radio" name="payment" id="payment-3"> <label
 							for="payment-3"> <span></span> Thanh toán khi nhận hàng
 						</label>
 						<div class="caption">
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-								sed do eiusmod tempor incididunt ut labore et dolore magna
-								aliqua.</p>
+							<p>Sẽ thanh toán đơn hàng của bạn khi đơn hàng được giao.</p>
 						</div>
 					</div>
 				</div>

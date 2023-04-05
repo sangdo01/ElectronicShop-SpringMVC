@@ -7,6 +7,10 @@ import org.springframework.stereotype.Repository;
 
 import ElectronicShop.Dto.ProductsDto;
 import ElectronicShop.Dto.ProductsDtoMapper;
+import ElectronicShop.Entity.Categories;
+import ElectronicShop.Entity.MapperCategories;
+import ElectronicShop.Entity.MapperProducts;
+import ElectronicShop.Entity.Product;
 
 @Repository
 public class ProductsDao extends BaseDao {
@@ -118,5 +122,21 @@ public class ProductsDao extends BaseDao {
 		String sql = sqlProductByID(id);
 		ProductsDto product = _jdbcTemplate.queryForObject(sql, new ProductsDtoMapper());
 		return product;
+	}
+	
+	
+	//admin
+	
+	public List<Product> getAllProducts() {
+		List<Product> list = new ArrayList<Product>();
+		String sql = "SELECT * FROM products";
+		list = _jdbcTemplate.query(sql, new MapperProducts());
+		return list;
+	}
+
+	public int deleteProductByID(int id) {
+		String sql = "delete from products where id = ?";
+		int result = _jdbcTemplate.update(sql, id);
+		return result;
 	}
 }
